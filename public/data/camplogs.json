@@ -1,0 +1,101 @@
+{
+  "campLogs": [
+    {
+      "campLogId": 1,
+      "title": "첫 번째 캠핑 기록",
+      "description": "이곳은 자연이 가득한 캠핑장입니다. 시원한 공기를 마시며 잠시 도시 생활에서 벗어나보세요!",
+      "image": "https://source.unsplash.com/random/500x500?camping",
+      "like": 20,
+      "view": 100,
+      "recTags": ["캠핑", "자연"],
+      "siteId": 1,
+      "visitedAt": "2022-05-06",
+      "visitedWith": "가족",
+      "writerEmail": "test1@example.com",
+      "writerNickName": "camping_lover",
+      "createdAt": "2022-05-06T14:12:59.650Z",
+      "updatedAt": "2022-05-06T14:12:59.650Z"
+    },
+    {
+      "campLogId": 2,
+      "title": "두 번째 캠핑 기록",
+      "description": "한적한 산속 캠핑장에서 시간을 보내고 있습니다. 밤하늘을 바라보며 로맨틱한 분위기를 느껴보세요!",
+      "image": "https://source.unsplash.com/random/500x500?camping",
+      "like": 30,
+      "view": 200,
+      "recTags": ["캠핑", "산"],
+      "siteId": 2,
+      "visitedAt": "2022-04-30",
+      "visitedWith": "연인",
+      "writerEmail": "test2@example.com",
+      "writerNickName": "nature_lover",
+      "createdAt": "2022-04-30T14:12:59.650Z",
+      "updatedAt": "2022-04-30T14:12:59.650Z"
+    },
+    {
+      "campLogId": 3,
+      "title": "세 번째 캠핑 기록",
+      "description": "해외 캠핑을 즐기는 중입니다. 다양한 문화를 경험하며 새로운 여행을 즐겨보세요!",
+      "image": "https://source.unsplash.com/random/500x500?camping",
+      "like": 50,
+      "view": 300,
+      "recTags": ["캠핑", "해외"],
+      "siteId": 3,
+      "visitedAt": "2022-04-25",
+      "visitedWith": "친구",
+      "writerEmail": "test3@example.com",
+      "writerNickName": "traveler",
+      "createdAt": "2022-04-25T14:12:59.650Z",
+      "updatedAt": "2022-04-25T14:12:59.650Z"
+    },
+    {
+      "campLogId": 13,
+      "createdAt": "2023-05-06T14:12:59.650Z",
+      "description": "강원도 양양군에 위치한 오대산국립공원 내의 캠핑장입니다. 오대산 국립공원은 한반도의 대표적인 산지로 유명하며, 철새처럼 날개를 펴고 새로운 시작을 하는 사람들에게 인기 있는 명소입니다. 이곳에서는 자연환경 속에서 캠핑을 즐길 수 있으며, 오대산의 아름다운 경치를 감상할 수 있습니다.",
+      "image": "https://source.unsplash.com/random/500x500?camping",
+      "image1": "https://source.unsplash.com/random/500x500?camping",
+      "image2": "https://source.unsplash.com/F7n3q4Zq6eM/800x600",
+      "image3": "https://source.unsplash.com/WcSglM2BQJg/800x600",
+      "image4": "https://source.unsplash.com/O2GU_vfCq3k/800x600",
+      "image5": "https://source.unsplash.com/mkfhWkWnQfU/800x600",
+      "like": 23,
+      "recTags": ["산책로", "전망대", "힐링"],
+      "siteId": 13,
+      "title": "오대산국립공원 캠핑장",
+      "updatedAt": "2023-05-06T14:12:59.650Z",
+      "view": 67,
+      "visitedAt": "2022-08-01T10:30:00.000Z",
+      "visitedWith": "가족",
+      "writerEmail": "user13@example.com",
+      "writerNickName": "산호"
+    },
+    {
+      "campLogId": 14,
+      "createdAt": "2023-05-06T14:12:59.650Z",
+      "description": "경상북도 안동시에 위치한 캠핑장입니다. 이곳은 계곡과 산, 호수 등이 어우러져 있는 아름다운 자연환경이 특징입니다. 캠핑장에서는 다양한 레크레이션 프로그램을 즐길 수 있으며, 주변 관광지들도 많아 즐길 거리가 많습니다.",
+      "image": "https://source.unsplash.com/random/500x500?camping",
+      "image1": "https://source.unsplash.com"
+    },
+    {
+      "campLogId": 15,
+      "createdAt": "2023-05-06T14:12:59.650Z",
+      "description": "경상북도 안동시에 위치한 캠핑장입니다. 이곳은 계곡과 산, 호수 등이 어우러져 있는 아름다운 자연환경이 특징입니다. 캠핑장에서는 다양한 레크레이션 프로그램을 즐길 수 있으며, 주변 관광지들도 많아 즐길 거리가 많습니다.",
+      "image": "https://source.unsplash.com/random/500x500?camping",
+      "image1": "https://source.unsplash.com"
+    },
+    {
+      "campLogId": 16,
+      "createdAt": "2023-05-06T14:12:59.650Z",
+      "description": "경상북도 안동시에 위치한 캠핑장입니다. 이곳은 계곡과 산, 호수 등이 어우러져 있는 아름다운 자연환경이 특징입니다. 캠핑장에서는 다양한 레크레이션 프로그램을 즐길 수 있으며, 주변 관광지들도 많아 즐길 거리가 많습니다.",
+      "image": "https://source.unsplash.com/random/500x500?camping",
+      "image1": "https://source.unsplash.com"
+    },
+    {
+      "campLogId": 17,
+      "createdAt": "2023-05-06T14:12:59.650Z",
+      "description": "경상북도 안동시에 위치한 캠핑장입니다. 이곳은 계곡과 산, 호수 등이 어우러져 있는 아름다운 자연환경이 특징입니다. 캠핑장에서는 다양한 레크레이션 프로그램을 즐길 수 있으며, 주변 관광지들도 많아 즐길 거리가 많습니다.",
+      "image": "https://source.unsplash.com/random/500x500?camping",
+      "image1": "https://source.unsplash.com"
+    }
+  ]
+}

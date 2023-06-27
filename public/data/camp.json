@@ -1,0 +1,97 @@
+{
+  "content": [
+    {
+      "memberId": 7,
+      "campName": "천주봉캠핑장",
+      "campId": 1,
+      "intro": "사계절이 아름다운 리우와 함께하세요.\n자연에서 즐기는 여유롭고 즐거운 시간,\n농업회사법인 리우가 즐거운 추억만 드릴 수 있도록 언제나 최선을 다합니다.\n모든 분들에게 좋은 추억만 드리겠습니다.\n\n#캠핑 #글램핑 #관광농원 #차박\n도심에서 벗어나 여유로운 시간을 보내보세요.\n",
+      "manageStatus": "AUTHORIZED",
+      "location": {
+        "environment": "산",
+        "addr1": "경북 문경시 농암면 청화로",
+        "addr2": "886-402",
+        "latitude": "36.7242354",
+        "longitude": "128.2439725"
+      },
+      "openSeason": "봄",
+      "animalCapable": "true",
+      "firstImage": "http://via.placeholder.com/640x480"
+    },
+    {
+      "memberId": 8,
+      "campName": "바다다캠핑장",
+      "campId": 2,
+      "intro": "사계절이 아름다운 리우와 함께하세요.\n자연에서 즐기는 여유롭고 즐거운 시간,\n농업회사법인 리우가 즐거운 추억만 드릴 수 있도록 언제나 최선을 다합니다.\n모든 분들에게 좋은 추억만 드리겠습니다.\n\n#캠핑 #글램핑 #관광농원 #차박\n도심에서 벗어나 여유로운 시간을 보내보세요.\n",
+      "manageStatus": "AUTHORIZED",
+      "location": {
+        "environment": "바다",
+        "addr1": "인천 강화군 화도면 해안남로",
+        "addr2": "2739-36",
+        "latitude": "37.6370128",
+        "longitude": "126.3799855"
+      },
+      "openSeason": "봄",
+      "animalCapable": "true",
+      "firstImage": "http://via.placeholder.com/640x480"
+    },
+    {
+      "memberId": 9,
+      "campName": "대회산캠핑장",
+      "campId": 3,
+      "intro": "사계절이 아름다운 리우와 함께하세요.\n자연에서 즐기는 여유롭고 즐거운 시간,\n농업회사법인 리우가 즐거운 추억만 드릴 수 있도록 언제나 최선을 다합니다.\n모든 분들에게 좋은 추억만 드리겠습니다.\n\n#캠핑 #글램핑 #관광농원 #차박\n도심에서 벗어나 여유로운 시간을 보내보세요.\n",
+      "manageStatus": "AUTHORIZED",
+      "location": {
+        "environment": "산",
+        "addr1": "경기 포천시 영북면 대회산길",
+        "addr2": "79-89",
+        "latitude": "38.0673925",
+        "longitude": "127.2395456"
+      },
+      "openSeason": "봄",
+      "animalCapable": "false",
+      "firstImage": "http://via.placeholder.com/640x480"
+    },
+    {
+      "memberId": 7,
+      "campName": "string",
+      "campId": 4,
+      "intro": "string111111111",
+      "manageStatus": "AUTHORIZED",
+      "location": {
+        "environment": "string",
+        "addr1": "string",
+        "addr2": "string",
+        "latitude": "string",
+        "longitude": "string"
+      },
+      "openSeason": "string",
+      "animalCapable": "string",
+      "firstImage": "string"
+    }
+  ],
+  "pageable": {
+    "sort": {
+      "empty": true,
+      "sorted": false,
+      "unsorted": true
+    },
+    "offset": 0,
+    "pageNumber": 0,
+    "pageSize": 5,
+    "paged": true,
+    "unpaged": false
+  },
+  "totalPages": 1,
+  "totalElements": 4,
+  "last": true,
+  "number": 0,
+  "sort": {
+    "empty": true,
+    "sorted": false,
+    "unsorted": true
+  },
+  "size": 5,
+  "numberOfElements": 4,
+  "first": true,
+  "empty": false
+}
