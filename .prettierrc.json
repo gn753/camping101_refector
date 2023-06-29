@@ -8,5 +8,5 @@
   "trailingComma": "all",
   "importOrderSeparation": false,
   "importOrderSortSpecifiers": true,
-  "importOrder": ["lib/", "styles/", "./api", "components/", "/pages", "^[./]"]
+  "importOrder": ["lib/", "styles/","components/", "/pages", "^[./]"]
 }

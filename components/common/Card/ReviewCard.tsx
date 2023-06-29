@@ -1,21 +1,27 @@
 import styled from "@emotion/styled";
+import { IsReviewDetails } from "@pages/api/getReviewsType";
+import Link from "next/link";
 
-export default function ReviewCard({ ...data }: any) {
-  const { writerNickName, title, description, createdAt, image } = data;
+export default function ReviewCard({ ...data }: IsReviewDetails) {
+  const { writerNickName, title, description, createdAt, image, campLogId } =
+    data;
+
   return (
     <CardWrapper>
-      <CardFigure src={image} />
-      <CardBody>
-        <CardTitle>{title}</CardTitle>
-        <CardDescritpion>{description}</CardDescritpion>
-        <CardFooter>
-          <CardUserInfo>
-            <i>유저프로필</i>
-            <span>{writerNickName}</span>
-          </CardUserInfo>
-          <CardUserCreated>{createdAt}</CardUserCreated>
-        </CardFooter>
-      </CardBody>
+      <LinkWrapper href={`/camp/details/${campLogId}}`}>
+        <CardFigure src={image} />
+        <CardBody>
+          <CardTitle>{title}</CardTitle>
+          <CardDescritpion>{description}</CardDescritpion>
+          <CardFooter>
+            <CardUserInfo>
+              <i>유저프로필</i>
+              <span>{writerNickName} </span>
+            </CardUserInfo>
+            <CardUserCreated>{createdAt.slice(0, 10)}</CardUserCreated>
+          </CardFooter>
+        </CardBody>
+      </LinkWrapper>
     </CardWrapper>
   );
 }
@@ -24,23 +30,27 @@ const CardWrapper = styled.article`
   display: flex;
   flex-basis: 48%;
   gap: 20px;
-  height: 120px;
+  height: 100px;
   overflow: hidden;
   cursor: pointer;
   padding: 10px 0;
   margin-bottom: 20px;
 `;
-
+const LinkWrapper = styled(Link)`
+  display: flex;
+  color: #000;
+`;
 const CardFigure = styled.img`
-  min-width: 6.75rem;
-  min-height: 6.75rem;
-  cursor: pointer;
+  width: 100px;
+  height: 100%;
+  border-radius: 5px;
 `;
 
 const CardBody = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  display: block;
+  text-decoration: none;
+  background-color: #fff;
+  margin-left: 1rem;
 `;
 
 const CardTitle = styled.h3`
@@ -51,6 +61,7 @@ const CardTitle = styled.h3`
   overflow: hidden;
   text-overflow: ellipsis;
   cursor: pointer;
+  margin-bottom: 10px;
 `;
 
 const CardDescritpion = styled.p`
@@ -59,6 +70,7 @@ const CardDescritpion = styled.p`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-bottom: 10px;
 `;
 
 const CardFooter = styled.footer`

@@ -1,9 +1,9 @@
 import styled from "@emotion/styled";
+import usePagination from "@components/common/Pagination/paginationHook";
 import Button from "components/common/Button/StyledButton";
 import ReviewCard from "components/common/Card/ReviewCard";
 import SiteCard from "components/common/Card/SiteCard";
 import Pagination from "components/common/Pagination/Pagination";
-import usePagination from "components/common/Pagination/Pagination.hooks";
 
 export default function StyleGuidePage() {
   const data = usePagination();
@@ -15,22 +15,34 @@ export default function StyleGuidePage() {
       <Row>
         <div className="col-sm">
           <div className="card-body">
-            <img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22512%22%20height%3D%22256%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%20256%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_188d2bb2b6c%20text%20%7B%20fill%3A%23ffffff%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A26pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_188d2bb2b6c%22%3E%3Crect%20width%3D%22512%22%20height%3D%22256%22%20fill%3D%22%232A72FF%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22183.75%22%20y%3D%22139.7%22%3E%232A72FF%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" />
+            <img
+              src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22512%22%20height%3D%22256%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%20256%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_188d2bb2b6c%20text%20%7B%20fill%3A%23ffffff%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A26pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_188d2bb2b6c%22%3E%3Crect%20width%3D%22512%22%20height%3D%22256%22%20fill%3D%22%232A72FF%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22183.75%22%20y%3D%22139.7%22%3E%232A72FF%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+              alt="샘플이미지"
+            />
           </div>
         </div>
         <div className="col-sm">
           <div className="card-body">
-            <img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22512%22%20height%3D%22256%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%20256%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_188d2bb2b6c%20text%20%7B%20fill%3A%23ffffff%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A26pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_188d2bb2b6c%22%3E%3Crect%20width%3D%22512%22%20height%3D%22256%22%20fill%3D%22%232A72FF%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22183.75%22%20y%3D%22139.7%22%3E%232A72FF%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" />
+            <img
+              src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22512%22%20height%3D%22256%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%20256%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_188d2bb2b6c%20text%20%7B%20fill%3A%23ffffff%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A26pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_188d2bb2b6c%22%3E%3Crect%20width%3D%22512%22%20height%3D%22256%22%20fill%3D%22%232A72FF%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22183.75%22%20y%3D%22139.7%22%3E%232A72FF%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+              alt="샘플이미지"
+            />
           </div>
         </div>
         <div className="col-sm">
           <div className="card-body">
-            <img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22512%22%20height%3D%22256%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%20256%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_188d2bb2b6c%20text%20%7B%20fill%3A%23ffffff%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A26pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_188d2bb2b6c%22%3E%3Crect%20width%3D%22512%22%20height%3D%22256%22%20fill%3D%22%232A72FF%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22183.75%22%20y%3D%22139.7%22%3E%232A72FF%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" />
+            <img
+              src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22512%22%20height%3D%22256%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%20256%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_188d2bb2b6c%20text%20%7B%20fill%3A%23ffffff%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A26pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_188d2bb2b6c%22%3E%3Crect%20width%3D%22512%22%20height%3D%22256%22%20fill%3D%22%232A72FF%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22183.75%22%20y%3D%22139.7%22%3E%232A72FF%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+              alt="샘플이미지"
+            />
           </div>
         </div>
         <div className="col-sm">
           <div className="card-body">
-            <img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22512%22%20height%3D%22256%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%20256%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_188d2bb2b6c%20text%20%7B%20fill%3A%23ffffff%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A26pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_188d2bb2b6c%22%3E%3Crect%20width%3D%22512%22%20height%3D%22256%22%20fill%3D%22%232A72FF%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22183.75%22%20y%3D%22139.7%22%3E%232A72FF%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" />
+            <img
+              src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22512%22%20height%3D%22256%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%20256%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_188d2bb2b6c%20text%20%7B%20fill%3A%23ffffff%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A26pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_188d2bb2b6c%22%3E%3Crect%20width%3D%22512%22%20height%3D%22256%22%20fill%3D%22%232A72FF%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22183.75%22%20y%3D%22139.7%22%3E%232A72FF%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+              alt="샘플이미지"
+            />
           </div>
         </div>
       </Row>
@@ -45,13 +57,7 @@ export default function StyleGuidePage() {
       </div>
       <h2>컴포넌트</h2>
       <div>
-        <SiteCard
-          campId={1}
-          campName="캠핑장"
-          firstImage="https://campingagains3.s3.ap-northeast-2.amazonaws.com/thumbnail_20221026_111207_31fea50419.jpg"
-          location="청량"
-          intro="캠핑장1입니다"
-        />
+        <SiteCard {...SiteCardData} />
         <ReviewCard {...CampLogData} />
       </div>
       <h2>버튼</h2>
@@ -125,7 +131,7 @@ const Row = styled.div`
 const CampLogData = {
   campLogId: 1,
   writerEmail: "test1@gmail.com",
-  writerNickName: "2323232",
+  writerNickName: null,
   siteId: 2,
   visitedAt: "2023-01-19T19:08:48",
   visitedWith: "커플",
@@ -146,7 +152,27 @@ const CampLogData = {
   image5:
     "https://campingagains3.s3.ap-northeast-2.amazonaws.com/medium_IMG_4348_72e88e0236.jpeg",
   like: 224,
-  view: 472,
-  createdAt: "2023-04-19",
-  updatedAt: "2023-06-19T07:49:50.438465",
+  view: 482,
+  createdAt: "2023-04-19T19:07:33",
+  updatedAt: "2023-06-24T07:11:06.189937",
+};
+
+const SiteCardData = {
+  campName: "캠핑장1",
+  campId: 1,
+  intro: "string233",
+  manageStatus: "AUTHORIZED",
+  location: {
+    environment: "string",
+    addr1: "string",
+    addr2: "string",
+    latitude: "string",
+    longitude: "string",
+  },
+  openSeason: "봄",
+  animalCapable: "string",
+  firstImage:
+    "https://campingagains3.s3.ap-northeast-2.amazonaws.com/thumbnail_20221026_111207_31fea50419.jpg",
+  campLogCnt: null,
+  sites: null,
 };

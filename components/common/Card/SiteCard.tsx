@@ -1,7 +1,8 @@
 import styled from "@emotion/styled";
+import { IsCamp } from "@pages/api/getCampsType";
 import Link from "next/link";
 
-export default function ({ ...rest }: any) {
+export default function ({ ...rest }: IsCamp) {
   const { campId, campName, firstImage, location, intro } = rest;
 
   return (
@@ -35,6 +36,7 @@ const CardWrapper = styled.article`
 
 const LinkWrapper = styled(Link)`
   display: flex;
+  color: #000;
 `;
 
 const CardPhoto = styled.img`

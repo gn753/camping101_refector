@@ -12,3 +12,6 @@ export type ReactNode =
 export type Props = {
   children: ReactNode;
 };
+
+declare module "*.png";
+declare module "*.gif";
