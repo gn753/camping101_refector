@@ -5,10 +5,10 @@ import Link from "next/link";
 export default function ReviewCard({ ...data }: IsReviewDetails) {
   const { writerNickName, title, description, createdAt, image, campLogId } =
     data;
-
+  console.log(campLogId);
   return (
     <CardWrapper>
-      <LinkWrapper href={`/camp/details/${campLogId}}`}>
+      <LinkWrapper href={`/camp/details/${campLogId}`}>
         <CardFigure src={image} />
         <CardBody>
           <CardTitle>{title}</CardTitle>

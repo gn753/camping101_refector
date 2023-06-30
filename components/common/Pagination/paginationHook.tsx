@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export default function usePagination() {
   const [page, setPage] = useState(1);
-  const limit = 3;
+  const limit = 6;
   const offset = (page - 1) * limit;
 
   const prevArrow = () => {
