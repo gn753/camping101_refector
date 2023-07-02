@@ -1,8 +1,11 @@
 import styled from "@emotion/styled";
 import postLogin from "@libs/api/auth/postLogin";
+import { setAccessAndRefreshToken } from "@libs/services/authTokenService";
+import { authLoginAtom } from "@libs/store/authStore";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useSetRecoilState } from "recoil";
 import Button from "@components/common/Button/StyledButton";
 import FormInputValidation from "./FormInputValidation";
 
@@ -13,6 +16,7 @@ interface IsUseFormProps {
 
 export default function Form() {
   const [isLoading, setIsLoading] = useState(false);
+  const setLogin = useSetRecoilState(authLoginAtom);
   const {
     register,
     formState: { errors },
@@ -30,8 +34,10 @@ export default function Form() {
   const loginUser = async (data: IsUseFormProps) => {
     if (isLoading) return false;
     await postLogin(data)
-      .then(() => {
+      .then((res) => {
         setIsLoading(false);
+        setLogin({ isLogin: true });
+        setAccessAndRefreshToken(res);
         router.push("/");
       })
       .catch((errors) => {
@@ -39,6 +45,7 @@ export default function Form() {
         alert(errors.message);
       });
   };
+
   return (
     <form onSubmit={handleSubmit(loginUser)}>
       <FormInputValidation

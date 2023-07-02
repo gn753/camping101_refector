@@ -1,3 +1,4 @@
+import { getAccessToken } from "@libs/services/authTokenService";
 import axios from "axios";
 
 const axiosInstance = axios.create({
@@ -7,3 +8,12 @@ const axiosInstance = axios.create({
   },
 });
 export default axiosInstance;
+
+axiosInstance.interceptors.request.use((config) => {
+  if (typeof window !== undefined) {
+    const token = getAccessToken();
+    const HeaderToken = `Bearer ${token}`;
+    config.headers.Authorization = HeaderToken;
+    return config;
+  } else return config;
+});

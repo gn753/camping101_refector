@@ -4,7 +4,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 
 type LayoutProps = {
-  children: ReactNode;
+  children?: ReactNode;
 };
 export default function Layout({ children }: LayoutProps) {
   return (
@@ -17,6 +17,5 @@ export default function Layout({ children }: LayoutProps) {
 }
 const Main = styled.main`
   position: relative;
-
   padding: 0 0 1rem 0;
 `;
