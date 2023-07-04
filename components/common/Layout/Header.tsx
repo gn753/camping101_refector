@@ -1,24 +1,10 @@
 import styled from "@emotion/styled";
-import getUserData from "@libs/api/auth/getUserData";
-import { getAccessToken } from "@libs/services/authTokenService";
-import { authUserData } from "@libs/store/authStore";
+import useAuthRefreshUserData from "@libs/hooks/authRefreshUserDataHook";
 import Link from "next/link";
-import { useEffect } from "react";
-import { useRecoilState } from "recoil";
 import LogginedTobBar from "./LogginedTobBar";
 
-getAccessToken;
 export default function Header() {
-  const [user, setUser] = useRecoilState(authUserData);
-
-  useEffect(() => {
-    if (typeof window !== undefined) {
-      const token = getAccessToken();
-      if (token) {
-        getUserData().then((res) => setUser(res.data));
-      }
-    }
-  }, []);
+  const { user } = useAuthRefreshUserData();
 
   return (
     <Wrapper>
@@ -40,7 +26,7 @@ export default function Header() {
 
         <List>
           {user ? (
-            <LogginedTobBar user={user} setUser={setUser} />
+            <LogginedTobBar user={user} />
           ) : (
             <>
               <Link href="/login" className="h5">
@@ -89,12 +75,6 @@ const List = styled.div`
     text-decoration: none;
     color: black;
     font-weight: 400;
-  }
-  button {
-    display: flex;
-    align-items: center;
-    font-size: 16px;
-    vertical-align: middle;
   }
   i {
     font-size: 0;

@@ -5,6 +5,11 @@ export const getAccessToken = () => {
     return sessionStorage.getItem("access-token");
   }
 };
+export const getRefreshToken = () => {
+  if (typeof window !== "undefined") {
+    return sessionStorage.getItem("refresh-token");
+  }
+};
 export const setAccessToken = (token: string) => {
   sessionStorage.setItem("access-token", token);
 };
@@ -37,4 +42,9 @@ const isTokenValidOrUndefined = (token: any) => {
   const isvalid =
     expirationTimeInMilliseconds >= now.getTime() ? "토큰 유효" : "토큰 만료";
   return isvalid;
+};
+
+export const removeAccessAndRefresh = () => {
+  sessionStorage.removeItem("access-token");
+  sessionStorage.removeItem("refresh-token");
 };

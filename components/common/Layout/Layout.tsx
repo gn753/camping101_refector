@@ -4,7 +4,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 
 type LayoutProps = {
-  children?: ReactNode;
+  children: ReactNode;
 };
 export default function Layout({ children }: LayoutProps) {
   return (
