@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
+import getUserData from "@libs/api/auth/getUserData";
 import postLogin from "@libs/api/auth/postLogin";
-import { setAccessAndRefreshToken } from "@libs/services/authTokenService";
-import { authLoginAtom } from "@libs/store/authStore";
+import { authLoginAtom, authUserData } from "@libs/store/authStore";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -16,6 +16,7 @@ interface IsUseFormProps {
 
 export default function Form() {
   const [isLoading, setIsLoading] = useState(false);
+  const setUser = useSetRecoilState(authUserData);
   const setLogin = useSetRecoilState(authLoginAtom);
   const {
     register,
@@ -35,14 +36,15 @@ export default function Form() {
     if (isLoading) return false;
     await postLogin(data)
       .then((res) => {
+        const accessToken = res.headers["access-token"];
         setIsLoading(false);
-        setLogin({ isLogin: true });
-        setAccessAndRefreshToken(res);
+        setLogin(accessToken);
+        getUserData(accessToken).then((response) => setUser(response.data));
         router.push("/");
       })
-      .catch((errors) => {
+      .catch((error) => {
         setIsLoading(false);
-        alert(errors.message);
+        alert(error.message);
       });
   };
 
