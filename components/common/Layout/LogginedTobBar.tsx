@@ -1,11 +1,15 @@
 import styled from "@emotion/styled";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
-export default function LogginedTobBar({ user, setUser }: any) {
+export default function LogginedTobBar({ user }: any) {
+  const router = useRouter();
   const logout = () => {
     sessionStorage.removeItem("access-token");
     sessionStorage.removeItem("refresh-token");
-    setUser(null);
+    setTimeout(function () {
+      router.reload();
+    }, 1000);
   };
 
   return (
@@ -14,9 +18,9 @@ export default function LogginedTobBar({ user, setUser }: any) {
         <ProfileIcon />
         <span className="h5">{user && user.nickname}</span>
       </UserProfile>
-      <span className="h5" onClick={logout}>
+      <LogoutButton className="h5" onClick={logout}>
         로그아웃
-      </span>
+      </LogoutButton>
     </>
   );
 }
@@ -34,11 +38,14 @@ const ProfileIcon = styled.i`
   margin-right: 5px;
 `;
 
-const Wrapper = styled.div`
-  display: flex;
-`;
-
 const UserProfile = styled(Link)`
   display: flex;
   align-items: center;
+`;
+
+const LogoutButton = styled.button`
+  all: unset;
+  display: block;
+  height: 100%;
+  cursor: pointer;
 `;
