@@ -1,7 +1,4 @@
-import {
-  setAccessToken,
-  tokenWithoutBearer,
-} from "@libs/services/authTokenService";
+import { setAccessToken } from "@libs/services/authTokenService";
 import axios from "axios";
 import postRefresh from "./auth/postRefresh";
 
@@ -27,9 +24,7 @@ axiosInstance.interceptors.response.use(
       if (response?.status === 200) {
         const accessToken = response.data["access-token"];
         setAccessToken(accessToken);
-        axiosInstance.defaults.headers.common[
-          "Authorization"
-        ] = accessToken;
+        axiosInstance.defaults.headers.common["Authorization"] = accessToken;
         return axiosInstance(originalRequest);
       }
     }
