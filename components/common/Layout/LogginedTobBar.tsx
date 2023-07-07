@@ -18,8 +18,8 @@ export default function LogginedTobBar({ user }: any) {
         <ProfileIcon />
         <span className="h5">{user && user.nickname}</span>
       </UserProfile>
-      <LogoutButton className="h5" onClick={logout}>
-        로그아웃
+      <LogoutButton onClick={logout}>
+        <span className="h5">로그아웃</span>
       </LogoutButton>
     </>
   );
