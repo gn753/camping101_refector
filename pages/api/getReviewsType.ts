@@ -12,16 +12,17 @@ export interface IsReviewDetails {
   visitedAt: string;
   visitedWith: string;
   recTags: object;
-  title: string;
+  title?: string;
   description: any;
   image: string;
-  image1: string;
-  image2: string;
-  image3: string;
-  image4: string;
-  image5: string;
+  image1?: string;
+  image2?: string;
+  image3?: string;
+  image4?: string;
+  image5?: string;
   like: number;
   view: number;
   createdAt: string;
   updatedAt: string | null;
+  campLogName?: string;
 }

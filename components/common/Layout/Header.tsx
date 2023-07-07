@@ -1,7 +1,11 @@
 import styled from "@emotion/styled";
+import useAuthRefreshUserData from "@libs/hooks/authRefreshUserDataHook";
 import Link from "next/link";
+import LogginedTobBar from "./LogginedTobBar";
 
 export default function Header() {
+  const { user } = useAuthRefreshUserData();
+
   return (
     <Wrapper>
       <NavigationWrapper>
@@ -15,17 +19,24 @@ export default function Header() {
           <Link href="/camp" className="h5">
             캠핑장
           </Link>
-          <Link href="/campLog" className="h5">
+          <Link href="/review" className="h5">
             캠핑장 리뷰
           </Link>
         </List>
+
         <List>
-          <Link href="/signIn" className="h5">
-            <i>아이콘</i>로그인
-          </Link>
-          <Link href="/signUp" className="h5">
-            회원가입
-          </Link>
+          {user ? (
+            <LogginedTobBar user={user} />
+          ) : (
+            <>
+              <Link href="/login" className="h5">
+                <i>아이콘</i>로그인
+              </Link>
+              <Link href="/join" className="h5">
+                회원가입
+              </Link>
+            </>
+          )}
         </List>
       </NavigationWrapper>
     </Wrapper>
@@ -65,33 +76,7 @@ const List = styled.div`
     color: black;
     font-weight: 400;
   }
-  button {
-    display: flex;
-    align-items: center;
-    font-size: 16px;
-    vertical-align: middle;
-  }
   i {
-    display: inline-block;
-    background-image: url("/icons/log_in.svg");
-    background-size: cover;
-    width: 30px;
-    height: 30px;
     font-size: 0;
-  }
-`;
-
-const Profile = styled.div`
-  display: flex;
-  align-items: center;
-
-  i {
-    display: inline-block;
-    background-image: url("/icons/user_default.svg");
-    background-size: contain;
-    width: 20px;
-    height: 20px;
-    font-size: 0;
-    margin-right: 5px;
   }
 `;
