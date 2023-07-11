@@ -3,16 +3,18 @@ import Calendar from "./Calendar/Calendar";
 import useCalendarList from "./Calendar/calendarListHook";
 import CampBanner from "./CampBanner";
 import CampMainInfo from "./CampMainInfo";
+import ResvSite from "./ResvSite/ResvSite";
 import ReviewList from "./ReviewList";
 
 export default function Resv({ campResvDetails }: any) {
-  const { campLogInCampList,siteIn } = campResvDetails;
+  const { campLogInCampList, siteInCampList } = campResvDetails;
   const { dateList } = useCalendarList();
   return (
     <Container>
       <CampBanner />
-      <Calendar calendarDatas={dateList} />
       <CampMainInfo campResvDetails={campResvDetails} />
+      <Calendar calendarDatas={dateList} />
+      <ResvSite resvList={siteInCampList} />
       <ReviewList reviewList={campLogInCampList} />
     </Container>
   );

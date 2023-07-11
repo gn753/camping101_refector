@@ -1,13 +1,20 @@
 import styled from "@emotion/styled";
+import { authUserData } from "@libs/store/authStore";
 import Image from "next/image";
+import { useRecoilValue } from "recoil";
+import { IsResvSiteList } from "./ResvSiteType";
 
-export default function ResvSiteCard() {
+export default function ResvSiteCard({ ...rest }: IsResvSiteList) {
+  const { siteId, name, checkIn, checkOut, price, introduction, siteCapacity } =
+    rest;
+  const user = useRecoilValue(authUserData);
+  console.log(user, "user");
   return (
     <Wrapper>
       <div>
         <Figure>
           <Image
-            src="http://placehold.it/1924x350"
+            src="https://campingagains3.s3.ap-northeast-2.amazonaws.com/thumbnail__4f07163e26.jpeg"
             fill
             alt="2"
             sizes="(min-width: 808px) 50vw, 100vw"
@@ -15,15 +22,13 @@ export default function ResvSiteCard() {
         </Figure>
         <div>
           <div>
-            <h3 className="h4">캠핑장 이름</h3>
-            <Description>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro
-            </Description>
+            <h3 className="h4">{name}</h3>
+            <Description>{introduction}</Description>
           </div>
           <CheckInAndPriceWrapper>
             <div>
-              <span>숙박(15:00) ~ </span>
-              <span className="h5">129,000</span>
+              <span>숙박({checkIn}) ~ </span>
+              <span className="h5">{price}</span>
             </div>
           </CheckInAndPriceWrapper>
           <ButtonWrapper>
@@ -35,7 +40,7 @@ export default function ResvSiteCard() {
   );
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.article`
   padding: 15px 19px;
   height: 400px;
 `;

@@ -1,0 +1,139 @@
+{
+  "siteId": 4,
+  "name": "사이트4",
+  "rpImage": "142",
+  "introduction": "사이트4입니다.",
+  "type": "GNRL",
+  "openYn": true,
+  "checkIn": "2023-04-19",
+  "checkOut": "2023-04-19",
+  "leastScheduling": 3,
+  "siteCapacity": {
+    "basicCapacity": 2,
+    "limitCapacity": 2,
+    "parkingCapacity": 3
+  },
+  "price": 10000,
+  "reservationInSiteList": [
+    {
+      "startDate": "2023-05-05",
+      "endDate": "2023-05-09",
+      "reservationId": 5
+    },
+    {
+      "startDate": "2023-05-11",
+      "endDate": "2023-05-16",
+      "reservationId": 8
+    },
+    {
+      "startDate": "2023-05-06",
+      "endDate": "2023-05-09",
+      "reservationId": 11
+    },
+    {
+      "startDate": "2023-05-05",
+      "endDate": "2023-05-07",
+      "reservationId": 14
+    },
+    {
+      "startDate": "2023-07-07",
+      "endDate": "2023-07-09",
+      "reservationId": 17
+    },
+    {
+      "startDate": "2023-06-10",
+      "endDate": "2023-06-12",
+      "reservationId": 20
+    },
+    {
+      "startDate": "2023-08-06",
+      "endDate": "2023-08-09",
+      "reservationId": 23
+    },
+    {
+      "startDate": "2023-10-07",
+      "endDate": "2023-10-09",
+      "reservationId": 26
+    },
+    {
+      "startDate": "2023-10-05",
+      "endDate": "2023-10-09",
+      "reservationId": 29
+    },
+    {
+      "startDate": "2023-06-07",
+      "endDate": "2023-06-09",
+      "reservationId": 32
+    },
+    {
+      "startDate": "2023-06-07",
+      "endDate": "2023-06-09",
+      "reservationId": 80
+    },
+    {
+      "startDate": "2023-10-08",
+      "endDate": "2023-10-09",
+      "reservationId": 81
+    },
+    {
+      "startDate": "2023-06-07",
+      "endDate": "2023-06-09",
+      "reservationId": 82
+    },
+    {
+      "startDate": "2023-06-10",
+      "endDate": "2023-06-12",
+      "reservationId": 83
+    },
+    {
+      "startDate": "2023-06-07",
+      "endDate": "2023-06-09",
+      "reservationId": 84
+    },
+    {
+      "startDate": "2023-06-07",
+      "endDate": "2023-06-09",
+      "reservationId": 85
+    },
+    {
+      "startDate": "2023-06-07",
+      "endDate": "2023-06-09",
+      "reservationId": 86
+    },
+    {
+      "startDate": "2023-06-10",
+      "endDate": "2023-06-10",
+      "reservationId": 87
+    },
+    {
+      "startDate": "2023-12-01",
+      "endDate": "2023-12-04",
+      "reservationId": 88
+    },
+    {
+      "startDate": "2023-12-01",
+      "endDate": "2023-12-04",
+      "reservationId": 89
+    },
+    {
+      "startDate": "2023-12-01",
+      "endDate": "2023-12-04",
+      "reservationId": 90
+    },
+    {
+      "startDate": "2023-12-01",
+      "endDate": "2023-12-04",
+      "reservationId": 91
+    },
+    {
+      "startDate": "2023-06-09",
+      "endDate": "2023-06-09",
+      "reservationId": 92
+    },
+    {
+      "startDate": "2023-10-06",
+      "endDate": "2023-10-07",
+      "reservationId": 93
+    }
+  ]
+}

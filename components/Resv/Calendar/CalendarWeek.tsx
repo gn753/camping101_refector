@@ -5,14 +5,9 @@ export default function CalendarWeek() {
   return (
     <Wrapper>
       <Container>
-        <TopBar>
-          <div>
-            <div>캠핑장 예약</div>
-          </div>
-        </TopBar>
         <DayList>
           {week.map((day, index) => (
-            <div
+            <Day
               key={index}
               className={
                 index === 0 // 일요일인 경우
@@ -23,7 +18,7 @@ export default function CalendarWeek() {
               }
             >
               {day}
-            </div>
+            </Day>
           ))}
         </DayList>
       </Container>
@@ -45,16 +40,6 @@ const Wrapper = styled.header`
 const Container = styled.div`
   width: 768px;
 `;
-
-const TopBar = styled.div`
-  display: flex;
-  position: relative;
-  align-items: center;
-  width: 100%;
-  min-height: 4.8rem;
-  justify-content: center;
-`;
-
 const DayList = styled.div`
   display: flex;
   justify-content: center;
@@ -62,7 +47,7 @@ const DayList = styled.div`
   .sunday {
     color: rgb(220, 3, 40);
   }
-  .sturday {
+  .saturday {
     color: #0152cc;
   }
 `;

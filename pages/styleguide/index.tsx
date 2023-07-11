@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import resvList from "@public/data/resvList.json";
 import ResvSiteCard from "@components/Resv/ResvSite/ResvSiteCard";
 import TitleSection from "@components/Review/ContentTitleSection";
 import usePagination from "@components/common/Pagination/paginationHook";
@@ -56,7 +57,7 @@ export default function StyleGuidePage() {
       <div>
         <SiteCard {...SiteCardData} />
         <ReviewCard {...CampLogData} />
-        <ResvSiteCard />
+        <ResvSiteCard {...resvList} />
       </div>
       <TitleSection title="버튼" />
       <Button primary full>

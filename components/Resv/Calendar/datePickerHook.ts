@@ -13,8 +13,8 @@ export const pickeredDateAtom = atom<any>({
   },
 });
 
-export const clendarDateListAtom = atom<any>({
-  key: "clendarDateListAtom",
+export const datePickerAtom = atom<any>({
+  key: "datePickerAtom",
   default: null,
 });
 

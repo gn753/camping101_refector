@@ -4,6 +4,7 @@ import Resv from "@components/Resv/Resv";
 import Layout from "components/common/Layout/Layout";
 
 export default function ResvPage({ campResvDetails }: any) {
+  console.log(campResvDetails, "Camp");
   return (
     <>
       <Head>
@@ -19,6 +20,7 @@ export default function ResvPage({ campResvDetails }: any) {
 export async function getServerSideProps({ query }: any) {
   const { id } = query;
   const campResvDetails = await getCampResvDetails(id);
+
   return {
     props: { campResvDetails },
   };

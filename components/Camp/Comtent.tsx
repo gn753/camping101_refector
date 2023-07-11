@@ -14,7 +14,7 @@ export default function Content({ camps }: IsCampPageProps) {
       <TitleSection title="실시간 캠핑장" />
       <List>
         {camps &&
-          camps.slice(offset, offset + limit).map((it) => <SiteCard {...it} />)}
+          camps(offset, offset + limit).map((it) => <SiteCard {...it} />)}
       </List>
       <Pagination
         limit={limit}
