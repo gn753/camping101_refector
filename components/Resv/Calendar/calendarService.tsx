@@ -7,9 +7,13 @@ const isHoliday = (date: any) => {
   return holidays.includes(date);
 };
 
-const getMonthDates = (firstDay, today, monthIndex) => {
+const getMonthDates = (
+  firstDay: moment.Moment,
+  today: moment.Moment,
+  monthIndex: any,
+) => {
   const monthDates = [];
-  let date = moment(firstDay).add(monthIndex, "months");
+  const date = moment(firstDay).add(monthIndex, "months");
 
   while (date.month() === monthIndex) {
     const isPast = date.isBefore(today, "day");
@@ -43,7 +47,7 @@ export const getCalendarDateInMonth = () => {
   return dates;
 };
 
-export const getSelectedDatesPeriod = (selectedList) => {
+export const getSelectedDatesPeriod = (selectedList: any) => {
   const isRender = selectedList.length > 0;
   const startDate = moment(selectedList[0]).format("YYYY년 M월 D일");
   const endDate = moment(selectedList[selectedList.length - 1]).format(

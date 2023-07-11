@@ -74,7 +74,7 @@ export interface Response {
         },
       ];
       rpImage: string;
-      siteCapacity: {};
+      siteCapacity: any;
       siteId: number;
       type: string;
     },

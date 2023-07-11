@@ -14,7 +14,9 @@ export default function useCalendarList() {
   useEffect(() => {
     const data = getCalendarDateInMonth();
     setDateList(data);
-  }, []);
+
+    return () => setDateList(null);
+  }, [setDateList]);
   return {
     dateList,
   };

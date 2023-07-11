@@ -7,7 +7,7 @@ export default function ReviewList({ reviewList }: any) {
     <section>
       <TitleSection title="캠핑장 가득 찬 리뷰 ~ " />
       <List>
-        {reviewList.map((it) => (
+        {reviewList.map((it: any) => (
           <ReviewCard {...it} />
         ))}
       </List>

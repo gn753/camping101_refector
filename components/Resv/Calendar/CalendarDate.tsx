@@ -1,5 +1,16 @@
 import styled from "@emotion/styled";
-import { useRef, useState } from "react";
+import { useRef } from "react";
+
+interface Props {
+  data: any;
+  day: number;
+  pickerMultipleDateRange: (date: string) => void;
+  pick: {
+    startDate: string;
+    endDate: string;
+  };
+  isBetweenDate: (data1: string, date2: string, date3: string) => boolean;
+}
 
 export default function CalendarDate({
   data,
@@ -7,18 +18,27 @@ export default function CalendarDate({
   pickerMultipleDateRange,
   pick,
   isBetweenDate,
-}: any) {
+}: Props) {
   const ref = useRef<HTMLDivElement>(null);
+  const testType = {
+    data,
+    day,
+    pickerMultipleDateRange,
+    pick,
+    isBetweenDate,
+  };
   const { startDate, endDate } = pick;
 
   const devideDate = () => {
     if (startDate === data.date) {
       return "start";
-    } else if (endDate === data.date) {
+    }
+    if (endDate === data.date) {
       return "end";
-    } else if (isBetweenDate(data.date, startDate, endDate)) {
+    }
+    if (isBetweenDate(data.date, startDate, endDate)) {
       return "between";
-    } else return false;
+    }
   };
 
   const devidedDate = devideDate();
@@ -26,7 +46,7 @@ export default function CalendarDate({
   return (
     <>
       {data.isPast ? (
-        <NotSale disabled={true}>{day + 1}</NotSale>
+        <NotSale disabled>{day + 1}</NotSale>
       ) : (
         <OnSale
           ref={ref}

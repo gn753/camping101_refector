@@ -29,7 +29,7 @@ export default function CalendarList({ data }: any) {
       </ArrowWrapper>
       <MonthsContainer>
         {monthList &&
-          monthList.map((it, index) => (
+          monthList.map((it: any, index: number) => (
             <Wrapper>
               <CalendarItem monthDates={it} key={`${it[0].date}-${index}`} />
             </Wrapper>

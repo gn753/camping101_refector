@@ -21,12 +21,16 @@ export const datePickerAtom = atom<any>({
 export default function useDatePicker() {
   const [pick, setPick] = useRecoilState(pickeredDateAtom);
 
-  const customDiff = (day1, day2) => {
+  const customDiff = (day1: string, day2: string) => {
     const dateDiff = moment(day2).diff(moment(day1), "days");
     return dateDiff;
   };
 
-  const isBetweendDate = (betweendDate, startDate, endDate) => {
+  const isBetweendDate = (
+    betweendDate: string,
+    startDate: string,
+    endDate: string,
+  ) => {
     const result = moment(betweendDate).isBetween(
       moment(startDate),
       moment(endDate),
@@ -35,8 +39,7 @@ export default function useDatePicker() {
     return result;
   };
 
-  const pickerMultipleDateRange = (date) => {
-    const clickedDate = date;
+  const pickerMultipleDateRange = (clickedDate: string) => {
     const { startDate } = pick;
     const diff = customDiff(startDate, clickedDate);
     // console.log(endDate, clickedDate);

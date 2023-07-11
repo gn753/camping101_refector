@@ -2,21 +2,21 @@ import styled from "@emotion/styled";
 
 const week = ["일", "월", "화", "수", "목", "금", "토"];
 export default function CalendarWeek() {
+  const getClassName = (index: number) => {
+    if (index === 0) {
+      return "sunday";
+    }
+    if (index === 6) {
+      return "saturday";
+    }
+    return "weekday";
+  };
   return (
     <Wrapper>
       <Container>
         <DayList>
           {week.map((day, index) => (
-            <Day
-              key={index}
-              className={
-                index === 0 // 일요일인 경우
-                  ? "sunday"
-                  : index === 6 // 토요일인 경우
-                  ? "saturday"
-                  : "weekday" // 나머지 평일인 경우
-              }
-            >
+            <Day key={index} className={getClassName(index)}>
               {day}
             </Day>
           ))}

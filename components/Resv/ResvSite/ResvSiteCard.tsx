@@ -1,14 +1,43 @@
 import styled from "@emotion/styled";
 import { authUserData } from "@libs/store/authStore";
+import postSiteResv from "@pages/api/postSiteResv";
 import Image from "next/image";
 import { useRecoilValue } from "recoil";
+import useDatePicker from "../Calendar/datePickerHook";
 import { IsResvSiteList } from "./ResvSiteType";
+import useIsReservationPossible from "./resvSiteHook";
 
 export default function ResvSiteCard({ ...rest }: IsResvSiteList) {
-  const { siteId, name, checkIn, checkOut, price, introduction, siteCapacity } =
+  const { siteId, name, checkIn, price, introduction, reservationInSiteList } =
     rest;
+  const { pick } = useDatePicker();
   const user = useRecoilValue(authUserData);
-  console.log(user, "user");
+  const isReservationPossible = useIsReservationPossible({
+    pick,
+    reservationInSiteList,
+  });
+
+  const resvSite = async () => {
+    if (!isReservationPossible) {
+      alert("로그인이 필요합니다");
+      return false;
+    }
+    const post = {
+      endDate: pick.endDate,
+      humanCapacity: 1,
+      memberId: user?.member_id,
+      payment: price,
+      siteId,
+      startDate: pick.startDate,
+    };
+    await postSiteResv(post)
+      .then(() => alert("예약이 완료됐습니다."))
+      .catch((err) => {
+        console.log(err.message);
+        alert("예약이 실패했습니다.");
+      });
+  };
+
   return (
     <Wrapper>
       <div>
@@ -32,7 +61,7 @@ export default function ResvSiteCard({ ...rest }: IsResvSiteList) {
             </div>
           </CheckInAndPriceWrapper>
           <ButtonWrapper>
-            <button>예약</button>
+            <button onClick={resvSite}>예약</button>
           </ButtonWrapper>
         </div>
       </div>
