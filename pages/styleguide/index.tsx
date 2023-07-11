@@ -1,4 +1,6 @@
 import styled from "@emotion/styled";
+import ResvSiteCard from "@components/Resv/ResvSite/ResvSiteCard";
+import TitleSection from "@components/Review/ContentTitleSection";
 import usePagination from "@components/common/Pagination/paginationHook";
 import Button from "components/common/Button/StyledButton";
 import ReviewCard from "components/common/Card/ReviewCard";
@@ -9,44 +11,39 @@ export default function StyleGuidePage() {
   const data = usePagination();
   return (
     <Wrapper>
-      <h1>Camping101 스타일 가이드 페이지</h1>
-
-      <h2>팔레트</h2>
+      <h1 className="h1">Camping101 스타일 가이드 페이지</h1>
+      <TitleSection title="팔레트" />
       <Row>
         <div className="col-sm">
           <div className="card-body">
-            <img
-              src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22512%22%20height%3D%22256%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%20256%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_188d2bb2b6c%20text%20%7B%20fill%3A%23ffffff%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A26pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_188d2bb2b6c%22%3E%3Crect%20width%3D%22512%22%20height%3D%22256%22%20fill%3D%22%232A72FF%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22183.75%22%20y%3D%22139.7%22%3E%232A72FF%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
-              alt="샘플이미지"
-            />
+            <div className="primary">
+              <span>#2a72ff</span>
+            </div>
           </div>
         </div>
         <div className="col-sm">
           <div className="card-body">
-            <img
-              src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22512%22%20height%3D%22256%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%20256%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_188d2bb2b6c%20text%20%7B%20fill%3A%23ffffff%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A26pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_188d2bb2b6c%22%3E%3Crect%20width%3D%22512%22%20height%3D%22256%22%20fill%3D%22%232A72FF%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22183.75%22%20y%3D%22139.7%22%3E%232A72FF%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
-              alt="샘플이미지"
-            />
+            <div className="green">
+              <span>#3da744</span>
+            </div>
           </div>
         </div>
         <div className="col-sm">
           <div className="card-body">
-            <img
-              src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22512%22%20height%3D%22256%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%20256%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_188d2bb2b6c%20text%20%7B%20fill%3A%23ffffff%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A26pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_188d2bb2b6c%22%3E%3Crect%20width%3D%22512%22%20height%3D%22256%22%20fill%3D%22%232A72FF%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22183.75%22%20y%3D%22139.7%22%3E%232A72FF%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
-              alt="샘플이미지"
-            />
+            <div className="teal">
+              <span>#42c994</span>
+            </div>
           </div>
         </div>
         <div className="col-sm">
           <div className="card-body">
-            <img
-              src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22512%22%20height%3D%22256%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%20256%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_188d2bb2b6c%20text%20%7B%20fill%3A%23ffffff%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A26pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_188d2bb2b6c%22%3E%3Crect%20width%3D%22512%22%20height%3D%22256%22%20fill%3D%22%232A72FF%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22183.75%22%20y%3D%22139.7%22%3E%232A72FF%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
-              alt="샘플이미지"
-            />
+            <div className="teal">
+              <span>#42c994</span>
+            </div>
           </div>
         </div>
       </Row>
-      <h2>타이포그래피</h2>
+      <TitleSection title="타이포그래피" />
       <div>
         <p className="h1">h1. Bootstrap heading</p>
         <p className="h2">h2. Bootstrap heading</p>
@@ -55,12 +52,13 @@ export default function StyleGuidePage() {
         <p className="h5">h5. Bootstrap heading</p>
         <p className="h6">h6. Bootstrap heading</p>
       </div>
-      <h2>컴포넌트</h2>
+      <TitleSection title="카드" />
       <div>
         <SiteCard {...SiteCardData} />
         <ReviewCard {...CampLogData} />
+        <ResvSiteCard />
       </div>
-      <h2>버튼</h2>
+      <TitleSection title="버튼" />
       <Button primary full>
         기본
       </Button>
@@ -70,7 +68,7 @@ export default function StyleGuidePage() {
       <Button teal full>
         teal
       </Button>
-      <h2>페이지네이션</h2>
+      <TitleSection title="페이지네이션" />
       <Pagination {...data} total={10} />
     </Wrapper>
   );
@@ -125,6 +123,27 @@ const Row = styled.div`
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
     padding: 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    div {
+      width: 160px;
+      height: 80px;
+      color: #fff;
+      font-weight: 700;
+    }
+    .primary {
+      background: #2a72ff;
+      border-color: #2a72ff;
+    }
+    .green {
+      border-color: #3da744;
+      background-color: #3da744;
+    }
+    .teal {
+      background: #42c994;
+      border-color: #42c994;
+    }
   }
 `;
 

@@ -6,7 +6,7 @@ import CampMainInfo from "./CampMainInfo";
 import ReviewList from "./ReviewList";
 
 export default function Resv({ campResvDetails }: any) {
-  const { campLogInCampList } = campResvDetails;
+  const { campLogInCampList,siteIn } = campResvDetails;
   const { dateList } = useCalendarList();
   return (
     <Container>
