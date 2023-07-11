@@ -23,7 +23,7 @@ export default function useAuthRefreshUserData() {
             setAccessToken(accessToken);
             delete axiosInstance.defaults.headers.common.Authorization;
             axiosInstance.defaults.headers.common.Authorization = accessToken;
-            getUserData().then((res) => setUser(res.data));
+            getUserData(accessToken).then((res) => setUser(res.data));
           })
           .catch((error) => {
             if (isAxiosError<IsAxiosErrorType>(error)) {

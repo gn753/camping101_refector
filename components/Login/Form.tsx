@@ -1,7 +1,10 @@
 import styled from "@emotion/styled";
 import getUserData from "@libs/api/auth/getUserData";
 import postLogin from "@libs/api/auth/postLogin";
-import { setRefreshToken } from "@libs/services/authTokenService";
+import {
+  setRefreshToken,
+  tokenWithoutBearer,
+} from "@libs/services/authTokenService";
 import { authLoginAtom, authUserData } from "@libs/store/authStore";
 import { useRouter } from "next/router";
 import { useState } from "react";
@@ -38,7 +41,7 @@ export default function Form() {
     await postLogin(data)
       .then((res) => {
         const accessToken = res.headers["access-token"];
-        const refreshToken = res.headers["refresh-token"];
+        const refreshToken = tokenWithoutBearer(res.headers["refresh-token"]);
         setRefreshToken(refreshToken);
         setIsLoading(false);
         setLogin(accessToken);
