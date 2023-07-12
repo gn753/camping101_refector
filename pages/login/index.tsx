@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Login from "@components/Login/Login";
 import Header from "@components/common/Layout/Header";
-import Layout from "@components/common/Layout/Layout";
 
 export default function LoginPage() {
   return (

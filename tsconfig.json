@@ -39,7 +39,8 @@
     "**/*.tsx",
     ".d.ts",
     ".d",
-    "next.config.js"
+    "next.config.js",
+    "components/User/Bookmarktsx"
   ],
   "exclude": ["node_modules"]
 }

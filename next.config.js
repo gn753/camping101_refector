@@ -10,6 +10,7 @@ const nextConfig = {
       "placehold.it",
       "source.unsplash.com",
       "campingagains3.s3.ap-northeast-2.amazonaws.com",
+      "camping101.s3.ap-northeast-2.amazonaws.com",
       "cdn.dribbble.com",
     ],
   },
