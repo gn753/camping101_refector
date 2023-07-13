@@ -1,5 +1,9 @@
 import styled from "@emotion/styled";
+import { IsAxiosErrorType } from "@libs/api/axiosErrorType";
 import axiosInstance from "@libs/api/axiosInstance";
+import getResvList from "@libs/api/getResvList";
+import { IsGetResvList } from "@libs/api/getResvListType";
+import { isAxiosError } from "axios";
 import { useEffect, useState } from "react";
 import TitleSection from "@components/Review/ContentTitleSection";
 import Pagination from "@components/common/Pagination/Pagination";
@@ -25,29 +29,38 @@ interface IsGetUserResv {
   campLogWritableYn: boolean;
 }
 
-export default function UserSiteResv({ userId }: Props) {
+export default function UserResvAdmin({ userId }: Props) {
   const [resv, setResvList] = useState<[] | IsGetUserResv[]>([]);
   const { offset, limit, nextArrow, prevArrow, page, updatePagination } =
     usePagination();
+
   useEffect(() => {
     if (typeof window !== undefined) {
-      const getResv = async () => {
-        if (!userId) return false;
-        const response = await axiosInstance.get(
-          `/api/reservation/customer/${userId}`,
-        );
-        setResvList(response.data);
-      };
-      getResv();
+      if (userId) {
+        getResvList(userId).then((res) => {
+          setResvList(res);
+        });
+      }
     }
   }, [userId]);
 
   const removeResv = async (resvId: number) => {
-    await axiosInstance.delete(`/api/reservation/${resvId}`);
-    const list = resv.filter((it) => it.reservationId !== resvId);
-    setResvList(list);
+    try {
+      const response = await axiosInstance.delete(`/api/reservation/${resvId}`);
+      if (response) {
+        const filterd = resv.filter((it) => it.reservationId !== resvId);
+        setResvList(filterd);
+      }
+    } catch (error) {
+      if (isAxiosError<IsAxiosErrorType>(error)) {
+        const status = error.response?.data.status;
+        const message = error.response?.data.error_message;
+        if (status === 500) {
+          alert(`${status} : ${message}`);
+        }
+      }
+    }
   };
-
   return (
     <div>
       <div>
@@ -63,7 +76,8 @@ export default function UserSiteResv({ userId }: Props) {
             </tr>
           </thead>
           <tbody>
-            {resv.length > 0 &&
+            {resv &&
+              resv.length > 0 &&
               resv.slice(offset, offset + limit).map((item) => {
                 return (
                   <tr>
@@ -74,16 +88,23 @@ export default function UserSiteResv({ userId }: Props) {
                       {item.startDate} {item.endDate}
                     </td>
                     <td className="action">
-                      <button onClick={() => removeResv(item.reservationId)}>
-                        cancle
-                      </button>
+                      {item.status !== "CANCEL" ? (
+                        <>
+                          <button
+                            onClick={() => removeResv(item.reservationId)}
+                          >
+                            cancle
+                          </button>
+                        </>
+                      ) : (
+                        <button disabled>취소불가</button>
+                      )}
                     </td>
                   </tr>
                 );
               })}
           </tbody>
         </Table>
-
         <Pagination
           total={resv.length}
           limit={limit}

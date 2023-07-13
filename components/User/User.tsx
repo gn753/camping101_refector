@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useRecoilValue } from "recoil";
 import TitleSection from "@components/Review/ContentTitleSection";
 import Bookmark from "./Bookmark";
-import UserSiteResv from "./UserSiteResv";
+import UserResvAdmin from "./UserResvAdmin";
 
 export default function User() {
   const userData = useRecoilValue(authUserData);
@@ -57,7 +57,7 @@ export default function User() {
         <Content>
           <div>
             {userId && nav === "북마크" && <Bookmark userId={userId} />}
-            {userId && nav === "예약목록" && <UserSiteResv userId={userId} />}
+            {userId && nav === "예약목록" && <UserResvAdmin userId={userId} />}
           </div>
         </Content>
       </Wrapper>
