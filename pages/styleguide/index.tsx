@@ -57,7 +57,9 @@ export default function StyleGuidePage() {
       <div>
         <CampCard {...SiteCardData} />
         <ReviewCard {...CampLogData} />
-        <ResvSiteCard {...resvList} />
+        <ResvSiteCardWrapper>
+          <ResvSiteCard {...resvList} />
+        </ResvSiteCardWrapper>
       </div>
       <TitleSection title="버튼" />
       <Button primary full>
@@ -110,8 +112,7 @@ const Row = styled.div`
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
+
   .col-sm {
     flex-basis: 0;
     -webkit-box-flex: 1;
@@ -120,13 +121,6 @@ const Row = styled.div`
     max-width: 100%;
   }
   .card-body {
-    -webkit-box-flex: 1;
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-    padding: 1.25rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     div {
       width: 160px;
       height: 80px;
@@ -196,3 +190,10 @@ const SiteCardData = {
   campLogCnt: null,
   sites: null,
 };
+
+const ResvSiteCardWrapper = styled.div`
+  width: 300px;
+  & > article {
+    padding: 0;
+  }
+`;
