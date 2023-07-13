@@ -3,19 +3,12 @@ import { IsReviewDetails } from "@pages/api/getReviewsType";
 import Link from "next/link";
 
 export default function ReviewCard({ ...data }: IsReviewDetails) {
-  const {
-    writerNickName,
-    title,
-    description,
-    createdAt,
-    image,
-    campLogId,
-    campLogName,
-  } = data;
+  const { writerNickName, title, description, createdAt, image, campLogName } =
+    data;
   const isTitle = campLogName || title;
   return (
     <CardWrapper>
-      <LinkWrapper href={`/review`}>
+      <LinkWrapper href="/review">
         <CardFigure src={image} />
         <CardBody>
           <CardTitle>{isTitle}</CardTitle>
