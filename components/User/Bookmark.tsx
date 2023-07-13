@@ -1,31 +1,41 @@
 import styled from "@emotion/styled";
 import TitleSection from "@components/Review/ContentTitleSection";
 import Pagination from "@components/common/Pagination/Pagination";
-import usePagination from "@components/common/Pagination/paginationHook";
+import usePagination from "@components/common/Pagination/usePagination";
 import BookmarkCard from "./BookmarkCard";
-import useBookmarkList from "./bookmarkListHook";
+import useBookmark from "./useBookmark";
 
 interface Props {
   userId: number;
 }
 
 export default function Bookmark({ userId }: Props) {
-  const { bookmarkList, removeBookmark } = useBookmarkList({ userId });
-  const pagination = usePagination();
+  const { bookmarkList, removeBookmark } = useBookmark({ userId });
+  const { offset, limit, nextArrow, prevArrow, page, updatePagination } =
+    usePagination();
   return (
     <>
       <TitleSection title="내 북마크목록" />
       <List>
         {bookmarkList.length > 0 &&
-          bookmarkList.map((it) => (
-            <BookmarkCard
-              key={it.bookMarkId}
-              removeBookmark={removeBookmark}
-              {...it}
-            />
-          ))}
+          bookmarkList
+            .slice(offset, offset + limit)
+            .map((it) => (
+              <BookmarkCard
+                key={it.bookMarkId}
+                removeBookmark={removeBookmark}
+                {...it}
+              />
+            ))}
       </List>
-      <Pagination total={bookmarkList.length} {...pagination} />
+      <Pagination
+        total={bookmarkList.length}
+        limit={limit}
+        nextArrow={nextArrow}
+        prevArrow={prevArrow}
+        page={page}
+        updatePagination={updatePagination}
+      />
     </>
   );
 }

@@ -3,7 +3,7 @@ import { authUserData } from "@libs/store/authStore";
 import postSiteResv from "@pages/api/postSiteResv";
 import Image from "next/image";
 import { useRecoilValue } from "recoil";
-import useDatePicker from "../Calendar/datePickerHook";
+import useDatePicker from "../Calendar/useDatePicker";
 import { IsResvSiteList } from "./ResvSiteType";
 import useIsReservationPossible from "./resvSiteHook";
 

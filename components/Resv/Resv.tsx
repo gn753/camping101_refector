@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import Calendar from "./Calendar/Calendar";
-import useCalendarList from "./Calendar/calendarListHook";
+import useCalendarList from "./Calendar/useCalendarList";
 import CampBanner from "./CampBanner";
 import CampMainInfo from "./CampMainInfo";
 import ResvSite from "./ResvSite/ResvSite";

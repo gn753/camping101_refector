@@ -3,7 +3,7 @@ import axiosInstance from "@libs/api/axiosInstance";
 import { useEffect, useState } from "react";
 import TitleSection from "@components/Review/ContentTitleSection";
 import Pagination from "@components/common/Pagination/Pagination";
-import usePagination from "@components/common/Pagination/paginationHook";
+import usePagination from "@components/common/Pagination/usePagination";
 
 interface Props {
   userId: number;
@@ -27,7 +27,8 @@ interface IsGetUserResv {
 
 export default function UserSiteResv({ userId }: Props) {
   const [resv, setResvList] = useState<[] | IsGetUserResv[]>([]);
-  const pagination = usePagination();
+  const { offset, limit, nextArrow, prevArrow, page, updatePagination } =
+    usePagination();
   useEffect(() => {
     if (typeof window !== undefined) {
       const getResv = async () => {
@@ -63,7 +64,7 @@ export default function UserSiteResv({ userId }: Props) {
           </thead>
           <tbody>
             {resv.length > 0 &&
-              resv.map((item) => {
+              resv.slice(offset, offset + limit).map((item) => {
                 return (
                   <tr>
                     <td>{item.reservationId}</td>
@@ -83,7 +84,14 @@ export default function UserSiteResv({ userId }: Props) {
           </tbody>
         </Table>
 
-        <Pagination total={resv.length} {...pagination} />
+        <Pagination
+          total={resv.length}
+          limit={limit}
+          nextArrow={nextArrow}
+          prevArrow={prevArrow}
+          page={page}
+          updatePagination={updatePagination}
+        />
       </div>
     </div>
   );

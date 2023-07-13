@@ -5,7 +5,7 @@ import { bookmarkListAtom } from "@libs/store/bookmarkStore";
 import { useEffect } from "react";
 import { useRecoilState } from "recoil";
 
-export default function useBookmarkList({ userId }: any) {
+export default function useBookmark({ userId }: any) {
   const [bookmarkList, setBookmarkList] = useRecoilState(bookmarkListAtom);
   const removeBookmark = async (id: number) => {
     await deleteBookmark(id);

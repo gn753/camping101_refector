@@ -9,7 +9,6 @@ export default function CalendarList({ data }: any) {
 
   const nextMonth = () => {
     if (month < 12) {
-      console.log(month);
       setMonth((pre) => pre + 1);
     }
   };

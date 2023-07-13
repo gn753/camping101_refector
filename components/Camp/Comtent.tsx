@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import TitleSection from "@components/Review/ContentTitleSection";
 import SiteCard from "@components/common/Card/SiteCard";
 import Pagination from "@components/common/Pagination/Pagination";
-import usePagination from "@components/common/Pagination/paginationHook";
+import usePagination from "@components/common/Pagination/usePagination";
 import { IsCampPageProps } from "./campType";
 
 export default function Content({ camps }: IsCampPageProps) {

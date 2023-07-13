@@ -4,7 +4,7 @@ import "moment/locale/ko";
 import { useRef } from "react";
 import CalendarDate from "./CalendarDate";
 import CalendarWeek from "./CalendarWeek";
-import useDatePicker from "./datePickerHook";
+import useDatePicker from "./useDatePicker";
 
 interface Props {
   monthDates: any;

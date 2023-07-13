@@ -42,8 +42,7 @@ export default function useDatePicker() {
   const pickerMultipleDateRange = (clickedDate: string) => {
     const { startDate } = pick;
     const diff = customDiff(startDate, clickedDate);
-    // console.log(endDate, clickedDate);
-    // console.log(diff, "diff");
+
     if (diff === 1) {
       setPick({
         startDate,

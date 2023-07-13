@@ -8,7 +8,6 @@ interface Props {
 }
 
 export default function ResvSite({ resvList }: Props) {
-  console.log(resvList, "Resvslist");
   return (
     <>
       <TitleSection title="예약가능한 캠핑장을 둘러보세요" />

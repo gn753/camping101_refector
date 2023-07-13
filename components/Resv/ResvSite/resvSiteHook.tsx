@@ -30,7 +30,6 @@ const compareEndDate = (캘린더종료날짜: any, 예약가능한날짜: any) 
 
 const getAvailableCampSite = (pick: any, reservationData: any) => {
   let result;
-  console.log(pick, "pick");
   if (!pick) {
     return null;
   }
@@ -51,7 +50,10 @@ const getAvailableCampSite = (pick: any, reservationData: any) => {
   return null;
 };
 
-const useIsReservationPossible = ({ pick, reservationInSiteList }: any) => {
+export default function useIsReservationPossible({
+  pick,
+  reservationInSiteList,
+}: any) {
   const [availableSites, setAvailableSites] = useState<any>(null); // 예약가능한 캠핑장 데이터 날짜
 
   useEffect(() => {
@@ -72,6 +74,4 @@ const useIsReservationPossible = ({ pick, reservationInSiteList }: any) => {
     return () => setAvailableSites(null);
   }, [pick, reservationInSiteList]);
   return availableSites;
-};
-
-export default useIsReservationPossible;
+}

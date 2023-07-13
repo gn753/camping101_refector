@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import ReviewCard from "@components/common/Card/ReviewCard";
 import Pagination from "@components/common/Pagination/Pagination";
-import usePagination from "@components/common/Pagination/paginationHook";
+import usePagination from "@components/common/Pagination/usePagination";
 import TitleSection from "./ContentTitleSection";
 import { IsReviewPageProps } from "./reviewType";
 

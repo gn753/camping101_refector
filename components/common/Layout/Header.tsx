@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import useAuthRefreshUserData from "@libs/hooks/authRefreshUserDataHook";
+import useAuthRefreshUserData from "@libs/hooks/useAuthRefreshUserData";
 import Link from "next/link";
 import LogginedTobBar from "./LogginedTobBar";
 

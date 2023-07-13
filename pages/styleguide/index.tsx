@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import resvList from "@public/data/resvList.json";
 import ResvSiteCard from "@components/Resv/ResvSite/ResvSiteCard";
 import TitleSection from "@components/Review/ContentTitleSection";
-import usePagination from "@components/common/Pagination/paginationHook";
+import usePagination from "@components/common/Pagination/usePagination";
 import Button from "components/common/Button/StyledButton";
 import ReviewCard from "components/common/Card/ReviewCard";
 import SiteCard from "components/common/Card/SiteCard";
