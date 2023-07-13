@@ -15,7 +15,7 @@ export default function ReviewCard({ ...data }: IsReviewDetails) {
   const isTitle = campLogName || title;
   return (
     <CardWrapper>
-      <LinkWrapper href={`/camp/resv/${campLogId}`}>
+      <LinkWrapper href={`/review`}>
         <CardFigure src={image} />
         <CardBody>
           <CardTitle>{isTitle}</CardTitle>

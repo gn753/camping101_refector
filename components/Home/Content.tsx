@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import Link from "next/link";
+import CampCard from "@components/common/Card/CampCard";
 import ReviewCard from "@components/common/Card/ReviewCard";
-import SiteCard from "components/common/Card/SiteCard";
 import { IsHomePageProps } from "./homeType";
 
 export default function Content({ camps, reviews }: IsHomePageProps) {
@@ -9,8 +9,8 @@ export default function Content({ camps, reviews }: IsHomePageProps) {
 
   return (
     <Wrapper>
-      <TitleSection title="실시간 인기캠핑장" href="/camp/" />
-      <List>{camps && camps.map((camp) => <SiteCard {...camp} />)}</List>
+      <TitleSection title="실시간 인기캠핑장" href="/camp" />
+      <List>{camps && camps.map((camp) => <CampCard {...camp} />)}</List>
       <TitleSection title="실시간 캠핑장리뷰" href="/review" />
       <List>{reviews && campReviews.map((it) => <ReviewCard {...it} />)}</List>
     </Wrapper>

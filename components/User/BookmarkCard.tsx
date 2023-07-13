@@ -24,7 +24,7 @@ export default function BookmarkCard({ ...rest }: Props) {
         <CardFigure src={image} />
         <CardBody>
           <CardTitle>
-            <Link href={`/rewview/${campLogId}`}>{title}</Link>
+            <Link href={`/review/${campLogId}`}>{title}</Link>
           </CardTitle>
           <CardDescritpion>{description}</CardDescritpion>
           <CardFooter>

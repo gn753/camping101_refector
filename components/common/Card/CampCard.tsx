@@ -2,12 +2,12 @@ import styled from "@emotion/styled";
 import { IsCamp } from "@pages/api/getCampsType";
 import Link from "next/link";
 
-export default function SiteCard({ ...rest }: IsCamp) {
+export default function CampCard({ ...rest }: IsCamp) {
   const { campId, campName, firstImage, location, intro } = rest;
 
   return (
     <CardWrapper>
-      <LinkWrapper href={`/camp/details/${campId}`}>
+      <LinkWrapper href={`/camp/resv/${campId}`}>
         <CardPhoto src={firstImage} alt="샘플이미지" />
         <CardBody>
           <CardTitle className="h5">{campName}</CardTitle>

@@ -2,10 +2,10 @@ import styled from "@emotion/styled";
 import resvList from "@public/data/resvList.json";
 import ResvSiteCard from "@components/Resv/ResvSite/ResvSiteCard";
 import TitleSection from "@components/Review/ContentTitleSection";
+import CampCard from "@components/common/Card/CampCard";
 import usePagination from "@components/common/Pagination/usePagination";
 import Button from "components/common/Button/StyledButton";
 import ReviewCard from "components/common/Card/ReviewCard";
-import SiteCard from "components/common/Card/SiteCard";
 import Pagination from "components/common/Pagination/Pagination";
 
 export default function StyleGuidePage() {
@@ -55,7 +55,7 @@ export default function StyleGuidePage() {
       </div>
       <TitleSection title="카드" />
       <div>
-        <SiteCard {...SiteCardData} />
+        <CampCard {...SiteCardData} />
         <ReviewCard {...CampLogData} />
         <ResvSiteCard {...resvList} />
       </div>

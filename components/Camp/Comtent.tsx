@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import TitleSection from "@components/Review/ContentTitleSection";
-import SiteCard from "@components/common/Card/SiteCard";
+import CampCard from "@components/common/Card/CampCard";
 import Pagination from "@components/common/Pagination/Pagination";
 import usePagination from "@components/common/Pagination/usePagination";
 import { IsCampPageProps } from "./campType";
@@ -14,7 +14,7 @@ export default function Content({ camps }: IsCampPageProps) {
       <TitleSection title="실시간 캠핑장" />
       <List>
         {camps &&
-          camps.slice(offset, offset + limit).map((it) => <SiteCard {...it} />)}
+          camps.slice(offset, offset + limit).map((it) => <CampCard {...it} />)}
       </List>
       <Pagination
         limit={limit}
