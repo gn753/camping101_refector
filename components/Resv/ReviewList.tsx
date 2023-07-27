@@ -7,9 +7,11 @@ export default function ReviewList({ reviewList }: any) {
     <section>
       <TitleSection title="캠핑장 가득 찬 리뷰 ~ " />
       <List>
-        {reviewList.map((it: any) => (
-          <ReviewCard {...it} />
-        ))}
+        {reviewList.length > 0 ? (
+          reviewList.map((it: any) => <ReviewCard {...it} />)
+        ) : (
+          <div className="h4">등록된 리뷰가 없습니다</div>
+        )}
       </List>
     </section>
   );

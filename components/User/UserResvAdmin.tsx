@@ -2,9 +2,8 @@ import styled from "@emotion/styled";
 import { IsAxiosErrorType } from "@libs/api/axiosErrorType";
 import axiosInstance from "@libs/api/axiosInstance";
 import getResvList from "@libs/api/getResvList";
-import { IsGetResvList } from "@libs/api/getResvListType";
 import { isAxiosError } from "axios";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import TitleSection from "@components/Review/ContentTitleSection";
 import Pagination from "@components/common/Pagination/Pagination";
 import usePagination from "@components/common/Pagination/usePagination";
@@ -29,8 +28,12 @@ interface IsGetUserResv {
   campLogWritableYn: boolean;
 }
 
+const now = new Date();
+const month = now.getMonth() + 1;
+const lastMonth = month + 3;
 export default function UserResvAdmin({ userId }: Props) {
   const [resv, setResvList] = useState<[] | IsGetUserResv[]>([]);
+  const [currentMonth, setCurrntMonth] = useState<number>(month);
   const { offset, limit, nextArrow, prevArrow, page, updatePagination } =
     usePagination();
 
@@ -42,14 +45,15 @@ export default function UserResvAdmin({ userId }: Props) {
         });
       }
     }
-  }, [userId]);
+  }, [currentMonth, userId]);
 
   const removeResv = async (resvId: number) => {
     try {
       const response = await axiosInstance.delete(`/api/reservation/${resvId}`);
       if (response) {
-        const filterd = resv.filter((it) => it.reservationId !== resvId);
-        setResvList(filterd);
+        getResvList(userId).then((res) => {
+          setResvList(res);
+        });
       }
     } catch (error) {
       if (isAxiosError<IsAxiosErrorType>(error)) {
@@ -61,58 +65,80 @@ export default function UserResvAdmin({ userId }: Props) {
       }
     }
   };
+
+  const prev = () => {
+    if (currentMonth <= 1) {
+      setCurrntMonth(() => month);
+    } else if (currentMonth > 0) {
+      setCurrntMonth((pre) => pre - 1);
+    }
+  };
+
+  const next = () => {
+    if (currentMonth >= lastMonth) {
+      return false;
+    }
+    if (currentMonth >= 12) {
+      setCurrntMonth(() => 1);
+    } else if (currentMonth > 0) {
+      setCurrntMonth((pre) => pre + 1);
+    }
+  };
+
   return (
     <div>
       <div>
         <TitleSection title="예약목록" />
-        <Table>
-          <thead>
-            <tr>
-              <th>예약ID</th>
-              <th>숙박명</th>
-              <th>예약상태</th>
-              <th>예약기간</th>
-              <th>예약변경</th>
-            </tr>
-          </thead>
-          <tbody>
-            {resv &&
-              resv.length > 0 &&
-              resv.slice(offset, offset + limit).map((item) => {
-                return (
-                  <tr>
-                    <td>{item.reservationId}</td>
-                    <td>{item.siteName}</td>
-                    <td>{item.status}</td>
-                    <td>
-                      {item.startDate} {item.endDate}
-                    </td>
-                    <td className="action">
-                      {item.status !== "CANCEL" ? (
-                        <>
-                          <button
-                            onClick={() => removeResv(item.reservationId)}
-                          >
-                            cancle
-                          </button>
-                        </>
-                      ) : (
-                        <button disabled>취소불가</button>
-                      )}
-                    </td>
-                  </tr>
-                );
-              })}
-          </tbody>
-        </Table>
-        <Pagination
-          total={resv.length}
-          limit={limit}
-          nextArrow={nextArrow}
-          prevArrow={prevArrow}
-          page={page}
-          updatePagination={updatePagination}
-        />
+        <Suspense fallback={<div>로딩...</div>}>
+          <Table>
+            <thead>
+              <tr>
+                <th>예약ID</th>
+                <th>숙박명</th>
+                <th>예약상태</th>
+                <th>예약기간</th>
+                <th>예약변경</th>
+              </tr>
+            </thead>
+            <tbody>
+              {resv &&
+                resv.length > 0 &&
+                resv.slice(offset, offset + limit).map((item) => {
+                  return (
+                    <tr>
+                      <td>{item.reservationId}</td>
+                      <td>{item.siteName}</td>
+                      <td>{item.status}</td>
+                      <td>
+                        {item.startDate} {item.endDate}
+                      </td>
+                      <td className="action">
+                        {item.status !== "CANCEL" ? (
+                          <>
+                            <button
+                              onClick={() => removeResv(item.reservationId)}
+                            >
+                              cancle
+                            </button>
+                          </>
+                        ) : (
+                          <button disabled>취소불가</button>
+                        )}
+                      </td>
+                    </tr>
+                  );
+                })}
+            </tbody>
+          </Table>
+          <Pagination
+            total={resv.length}
+            limit={limit}
+            nextArrow={nextArrow}
+            prevArrow={prevArrow}
+            page={page}
+            updatePagination={updatePagination}
+          />
+        </Suspense>
       </div>
     </div>
   );

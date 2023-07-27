@@ -63,7 +63,7 @@ export default function CalendarDate({
 }
 
 const NotSale = styled.button`
-  width: 50px;
+  width: 84px;
   height: 44px;
   line-height: 40px;
   text-align: center;
@@ -73,7 +73,7 @@ const NotSale = styled.button`
 `;
 
 const OnSale = styled.div<any>`
-  width: 50px;
+  width: 84px;
   height: 44px;
   line-height: 40px;
   text-align: center;

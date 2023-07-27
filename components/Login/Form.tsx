@@ -40,8 +40,8 @@ export default function Form() {
     if (isLoading) return false;
     await postLogin(data)
       .then((res) => {
-        const accessToken = res.headers["access-token"];
-        const refreshToken = tokenWithoutBearer(res.headers["refresh-token"]);
+        const accessToken = res?.headers["access-token"];
+        const refreshToken = tokenWithoutBearer(res?.headers["refresh-token"]);
         setRefreshToken(refreshToken);
         setIsLoading(false);
         setLogin(accessToken);
@@ -50,7 +50,6 @@ export default function Form() {
       })
       .catch((error) => {
         setIsLoading(false);
-        alert(error.message);
       });
   };
 

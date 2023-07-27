@@ -1,60 +1,115 @@
 import styled from "@emotion/styled";
-import useAuthRefreshUserData from "@libs/hooks/useAuthRefreshUserData";
+import { authUserData } from "@libs/store/authStore";
 import Link from "next/link";
+import { useEffect } from "react";
+import { atom, useRecoilState, useRecoilValue } from "recoil";
 import LogginedTobBar from "./LogginedTobBar";
 
+export const loadingAtom = atom({
+  key: "loadingAtom ",
+  default: true,
+});
+
+function SkeletonUi() {
+  return <SkeletonWrapper />;
+}
+
 export default function Header() {
-  const { user } = useAuthRefreshUserData();
+  const user = useRecoilValue(authUserData);
+  const [loading, setLoading] = useRecoilState(loadingAtom);
 
+  useEffect(() => {
+    if (user) {
+      setTimeout(() => setLoading(false), 1000);
+    }
+  }, [user, setLoading]);
   return (
-    <Wrapper>
-      <NavigationWrapper>
-        <List>
-          <Link href="/" className="h5">
-            캠핑101
-          </Link>
-          <Link href="/" className="h5">
-            홈
-          </Link>
-          <Link href="/camp" className="h5">
-            캠핑장
-          </Link>
-          <Link href="/review" className="h5">
-            캠핑장 리뷰
-          </Link>
-        </List>
+    <>
+      <Wrapper>
+        <NavigationWrapper>
+          <List>
+            <Link href="/" className="h5">
+              캠핑101
+            </Link>
+            <Link href="/" className="h5">
+              홈
+            </Link>
+            <Link href="/camp" className="h5">
+              캠핑장
+            </Link>
+            <Link href="/review" className="h5">
+              캠핑장 리뷰
+            </Link>
+          </List>
 
-        <List>
-          {user ? (
-            <LogginedTobBar user={user} />
-          ) : (
-            <>
-              <Link href="/login" className="h5">
-                <i>아이콘</i>로그인
-              </Link>
-              <Link href="/join" className="h5">
-                회원가입
-              </Link>
-            </>
-          )}
-        </List>
-      </NavigationWrapper>
-    </Wrapper>
+          <List>
+            {user ? (
+              <LogginedTobBar user={user} />
+            ) : (
+              <>
+                <Link href="/login" className="h5">
+                  <i>아이콘</i>로그인
+                </Link>
+                <Link href="/join" className="h5">
+                  회원가입
+                </Link>
+              </>
+            )}
+          </List>
+        </NavigationWrapper>
+      </Wrapper>
+    </>
   );
 }
 
-const Wrapper = styled.header`
-  position: sticky;
+const SkeletonWrapper = styled.div`
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 999;
+  height: 50px;
+  z-index: 1000;
+  background-color: #f2f2f2;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+
+  @keyframes skeleton-gradient {
+    0% {
+      background-color: rgba(165, 165, 165, 0.1);
+    }
+    50% {
+      background-color: rgba(165, 165, 165, 0.3);
+    }
+    100% {
+      background-color: rgba(165, 165, 165, 0.1);
+    }
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: skeleton-gradient 1.5s infinite ease-in-out;
+  }
+`;
+
+const Wrapper = styled.header`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100vw;
+  z-index: 997;
   border: 1px solid #eee;
   background-color: #fff;
+  transition: 0.5s;
 `;
 
 const NavigationWrapper = styled.nav`
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -65,6 +120,7 @@ const NavigationWrapper = styled.nav`
 `;
 
 const List = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   gap: 30px;

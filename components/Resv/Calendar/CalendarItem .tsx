@@ -40,8 +40,8 @@ export default function CalendarItem({ monthDates }: Props) {
 }
 
 const Wrapper = styled.div`
-  max-width: 360px;
   padding-bottom: 20px;
+  width: 640px;
 `;
 
 const CalendarMonthWrapper = styled.div`
@@ -63,7 +63,7 @@ const Title = styled.strong`
   text-align: center;
 `;
 const Blank = styled.div`
-  width: 50px;
+  width: 84px;
   height: 44px;
   line-height: 40px;
   text-align: center;

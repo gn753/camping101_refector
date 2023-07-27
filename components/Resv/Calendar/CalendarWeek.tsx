@@ -38,12 +38,10 @@ const Wrapper = styled.header`
 `;
 
 const Container = styled.div`
-  width: 768px;
+  width: 640px;
 `;
 const DayList = styled.div`
   display: flex;
-  justify-content: center;
-
   .sunday {
     color: rgb(220, 3, 40);
   }
@@ -53,7 +51,7 @@ const DayList = styled.div`
 `;
 
 const Day = styled.div`
-  width: 50px;
+  width: 84px;
   height: 44px;
   display: flex;
   align-items: center;

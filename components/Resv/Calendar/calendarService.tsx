@@ -1,50 +1,51 @@
 // 한국어 설정
 import holidays from "@public/data/holidays.json";
-import moment from "moment";
+import moment, { Moment } from "moment";
 import "moment/locale/ko";
 
 const isHoliday = (date: any) => {
   return holidays.includes(date);
 };
 
-const getMonthDates = (
-  firstDay: moment.Moment,
-  today: moment.Moment,
-  monthIndex: any,
-) => {
-  const monthDates = [];
-  const date = moment(firstDay).add(monthIndex, "months");
+const getMonthDates = (month: any) => {
+  const firstDate = moment(month).clone().startOf("month");
+  const lastDate = moment(month).clone().endOf("month");
+  const today = moment();
+  const monthDates: any = [];
 
-  while (date.month() === monthIndex) {
-    const isPast = date.isBefore(today, "day");
-    const dateFormat = date.clone().format("YYYY-MM-DD");
-    const weekdays = isHoliday(dateFormat) ? "공휴일" : date.format("dddd");
+  Array.from({ length: lastDate.daysInMonth() }).forEach((s, index) => {
+    const isPast = firstDate.clone().add(index, "day").isBefore(today, "day");
+    const dateFormat = firstDate.clone().add(index, "day").format("YYYY-MM-DD");
+    const weekdays = isHoliday(dateFormat)
+      ? "공휴일"
+      : firstDate.clone().add(index, "day").format("dddd");
 
     monthDates.push({
-      date: dateFormat,
       isPast,
+      date: dateFormat,
       weekdays,
     });
-
-    date.add(1, "days");
-  }
+  });
 
   return monthDates;
 };
 
 // 달력의 모든 달에 대한 날짜들을 가져오는 함수
-export const getCalendarDateInMonth = () => {
-  const today = moment();
-  const dates: any = [];
-  const firstDay = moment().startOf("year");
+export const getCalendarDateInMonth = (
+  year: number,
+  month: number,
+  calendarNumRender: number,
+) => {
+  const calendarList: any[] = [];
+  Array.from({ length: calendarNumRender }).forEach((_, i) => {
+    const startDate = moment({ year, month });
+    const currentMonth = startDate.clone().add(i, "months");
 
-  // 12개의 달에 대해 반복하며 각 달의 날짜들을 가져옵니다.
-  Array.from({ length: 12 }).forEach((_, i) => {
-    const monthDates = getMonthDates(firstDay, today, i);
-    dates.push(monthDates);
+    const calendar = getMonthDates(currentMonth);
+    calendarList.push(calendar);
   });
 
-  return dates;
+  return calendarList;
 };
 
 export const getSelectedDatesPeriod = (selectedList: any) => {

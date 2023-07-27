@@ -12,9 +12,13 @@ export default function ResvSite({ resvList }: Props) {
     <>
       <TitleSection title="예약가능한 캠핑장을 둘러보세요" />
       <Wrapper>
-        {resvList.map((it, index) => (
-          <ResvSiteCard {...it} key={index} />
-        ))}
+        {resvList.length > 0 ? (
+          resvList.map((it, index) => <ResvSiteCard {...it} key={index} />)
+        ) : (
+          <div className="h4">
+            주인회원이 아직 방을 등록하지 않은 캠핑장입니다
+          </div>
+        )}
       </Wrapper>
     </>
   );

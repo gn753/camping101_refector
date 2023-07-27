@@ -13,6 +13,7 @@ export default function Bookmark({ userId }: Props) {
   const { bookmarkList, removeBookmark } = useBookmark({ userId });
   const { offset, limit, nextArrow, prevArrow, page, updatePagination } =
     usePagination();
+
   return (
     <>
       <TitleSection title="내 북마크목록" />

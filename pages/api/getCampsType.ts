@@ -13,4 +13,5 @@ export interface IsCamp {
   };
   manageStatus: string;
   openSeason: string;
+  campLogCnt: number;
 }

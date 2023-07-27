@@ -4,18 +4,23 @@ import { useState } from "react";
 import CalendarItem from "./CalendarItem ";
 
 export default function CalendarList({ data }: any) {
-  const currentMonth = moment().month();
-  const [month, setMonth] = useState(currentMonth);
+  const [calendarIndex, setCalendarIndex] = useState(0);
 
   const nextMonth = () => {
-    if (month < 12) {
-      setMonth((pre) => pre + 1);
+    if (calendarIndex >= 2) {
+      setCalendarIndex(0);
+      alert("해당월은 예약이 불가능합니다");
+      return false;
     }
+    setCalendarIndex((pre) => pre + 1);
   };
   const prevMonth = () => {
-    setMonth((pre) => pre - 1);
+    if (calendarIndex < 1) {
+      return false;
+    }
+    setCalendarIndex((pre) => pre - 1);
   };
-  const monthList = data && data.slice(month, month + 2);
+
   return (
     <>
       <ArrowWrapper>
@@ -27,25 +32,18 @@ export default function CalendarList({ data }: any) {
         </li>
       </ArrowWrapper>
       <MonthsContainer>
-        {monthList &&
-          monthList.map((it: any, index: number) => (
-            <Wrapper>
-              <CalendarItem monthDates={it} key={`${it[0].date}-${index}`} />
-            </Wrapper>
-          ))}
+        {data && data.length > 0 && (
+          <CalendarItem
+            monthDates={data[calendarIndex]}
+            key={`${data[0].date}`}
+          />
+        )}
       </MonthsContainer>
     </>
   );
 }
 
-const MonthsContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-`;
-const Wrapper = styled.div`
-  max-width: 360px;
-`;
+const MonthsContainer = styled.div``;
 
 const ArrowWrapper = styled.ul`
   display: flex;

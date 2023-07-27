@@ -1,10 +1,5 @@
-import getUserData from "@libs/api/auth/getUserData";
-import { getAccessToken } from "@libs/services/authTokenService";
 import { atom, selector } from "recoil";
 
-interface Props {
-  isLogin: string | null;
-}
 interface IsUserDataProps {
   email: string;
   image: string;

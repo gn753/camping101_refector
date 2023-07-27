@@ -187,7 +187,7 @@ const SiteCardData = {
   animalCapable: "string",
   firstImage:
     "https://campingagains3.s3.ap-northeast-2.amazonaws.com/thumbnail_20221026_111207_31fea50419.jpg",
-  campLogCnt: null,
+  campLogCnt: 0,
   sites: null,
 };
 

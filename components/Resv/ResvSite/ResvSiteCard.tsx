@@ -18,7 +18,7 @@ export default function ResvSiteCard({ ...rest }: IsResvSiteList) {
   });
 
   const resvSite = async () => {
-    if (!isReservationPossible) {
+    if (!user) {
       alert("로그인이 필요합니다");
       return false;
     }
@@ -61,7 +61,11 @@ export default function ResvSiteCard({ ...rest }: IsResvSiteList) {
             </div>
           </CheckInAndPriceWrapper>
           <ButtonWrapper>
-            <button onClick={resvSite}>예약</button>
+            {isReservationPossible ? (
+              <button onClick={resvSite}>예약</button>
+            ) : (
+              <button disabled>매진</button>
+            )}
           </ButtonWrapper>
         </div>
       </div>

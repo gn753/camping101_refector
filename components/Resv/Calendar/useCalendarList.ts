@@ -1,3 +1,4 @@
+import moment from "moment";
 import "moment/locale/ko";
 import { useEffect } from "react";
 import { atom, useRecoilState } from "recoil";
@@ -12,9 +13,10 @@ export default function useCalendarList() {
   const [dateList, setDateList] = useRecoilState(clendarDateListAtom);
 
   useEffect(() => {
-    const data = getCalendarDateInMonth();
-    setDateList(data);
-
+    const year = moment().year();
+    const month = moment().month();
+    const calendarList = getCalendarDateInMonth(year, month, 3);
+    setDateList(calendarList);
     return () => setDateList(null);
   }, [setDateList]);
   return {

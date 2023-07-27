@@ -10,9 +10,14 @@ export default function Content({ camps, reviews }: IsHomePageProps) {
   return (
     <Wrapper>
       <TitleSection title="실시간 인기캠핑장" href="/camp" />
-      <List>{camps && camps.map((camp) => <CampCard {...camp} />)}</List>
+      <List>
+        {camps && camps.map((camp) => <CampCard key={camp.campId} {...camp} />)}
+      </List>
       <TitleSection title="실시간 캠핑장리뷰" href="/review" />
-      <List>{reviews && campReviews.map((it) => <ReviewCard {...it} />)}</List>
+      <List>
+        {reviews &&
+          campReviews.map((it) => <ReviewCard key={it.campLogId} {...it} />)}
+      </List>
     </Wrapper>
   );
 }
