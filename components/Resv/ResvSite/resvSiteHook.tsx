@@ -29,7 +29,6 @@ const compareEndDate = (캘린더종료날짜: any, 예약가능한날짜: any) 
 };
 
 const getAvailableCampSite = (pick: any, reservationData: any) => {
-  let result;
   if (!pick) {
     return null;
   }
@@ -45,7 +44,7 @@ const getAvailableCampSite = (pick: any, reservationData: any) => {
     compareStartDate(예약선택시작날짜, 예약가능한시작날짜) &&
     compareEndDate(예약선택종료날짜, 예약가능한종료날짜)
   ) {
-    return (result = reservationData);
+    return reservationData;
   }
   return null;
 };
