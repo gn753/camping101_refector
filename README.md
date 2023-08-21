@@ -36,17 +36,17 @@
 
 ### 폴더구조
 
-- components :
-  ├── Camp 캠핑장 목록
-  ├── Home 메인페이지
-  ├── Join 회원가입
-  ├── Login 로그인
-  ├── Resv 캠핑장 예약
-  ├── Review 캠핑장 리뷰
-  ├── ReviewDetails 리뷰 상세페이지
-  ├── User 마이페이지
-  └── common 공통
-  ├── AuthCheck 새로고침 시 유저검증
+- components  
+  ├── Camp 캠핑장 목록  
+  ├── Home 메인페이지  
+  ├── Join 회원가입  
+  ├── Login 로그인  
+  ├── Resv 캠핑장 예약  
+  ├── Review 캠핑장 리뷰  
+  ├── ReviewDetails 리뷰 상세페이지  
+  ├── User 마이페이지  
+  └── common 공통  
+  ├── AuthCheck 새로고침 시 유저검증  
   │ └── AuthCheck.tsx
 
 - libs : 전역적으로 재사용가능한 상태, api 모음
