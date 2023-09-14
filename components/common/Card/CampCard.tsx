@@ -1,14 +1,18 @@
 import styled from "@emotion/styled";
 import { IsCamp } from "@pages/api/getCampsType";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function CampCard({ ...rest }: IsCamp) {
   const { campId, campName, firstImage, location, intro } = rest;
 
+  const isImage =
+    firstImage.length > 8 ? firstImage : "/imgs/img-banner-01.png";
+
   return (
     <CardWrapper>
       <LinkWrapper href={`/camp/resv/${campId}`}>
-        <CardPhoto src={firstImage} alt="샘플이미지" />
+        <CardPhoto src={isImage} width={100} height={100} alt="샘플이미지" />
         <CardBody>
           <CardTitle className="h5">{campName}</CardTitle>
           <CardDescription>{intro}</CardDescription>
@@ -39,7 +43,7 @@ const LinkWrapper = styled(Link)`
   color: #000;
 `;
 
-const CardPhoto = styled.img`
+const CardPhoto = styled(Image)`
   width: 100px;
   height: 100%;
   border-radius: 5px;

@@ -18,4 +18,5 @@ export default function Layout({ children }: LayoutProps) {
 const Main = styled.main`
   position: relative;
   padding: 0 0 1rem 0;
+  padding-top: 50px;
 `;

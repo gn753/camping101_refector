@@ -10,6 +10,7 @@ import { authUserData } from "@libs/store/authStore";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useRecoilValue } from "recoil";
+import Button from "@components/common/Button/StyledButton";
 import CommentList from "./CommentList";
 import { IsCommentItem } from "./CommentType";
 
@@ -139,14 +140,16 @@ export default function Comment({ id }: any) {
 
   return (
     <div>
-      <h1>댓글 목록</h1>
-      <div>
+      <Title>댓글 목록</Title>
+      <FormWrapper>
         <TextArea
           value={newCommentContent}
           onChange={(e) => setNewCommentContent(e.target.value)}
         />
-        <button onClick={handleAddComment}>댓글 작성</button>
-      </div>
+        <Button primary onClick={handleAddComment}>
+          작성
+        </Button>
+      </FormWrapper>
       <CommentList
         comments={comments}
         onDeleteComment={handleDeleteComment}
@@ -159,7 +162,19 @@ export default function Comment({ id }: any) {
   );
 }
 
+const Title = styled.strong`
+  display: block;
+  font-size: 28px;
+  margin-bottom: 20px;
+`;
+
 const TextArea = styled.textarea`
-  width: 100%;
+  width: 90%;
   min-height: 50px;
+`;
+
+const FormWrapper = styled.div`
+  display: flex;
+  font-size: 28px;
+  margin-bottom: 20px;
 `;

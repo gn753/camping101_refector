@@ -27,6 +27,8 @@ export default function ReviewDetails({ data, id }: Props) {
 }
 
 const Wrapper = styled.div`
+  width: 768px;
+  margin: auto;
   section {
     padding-bottom: 20px;
   }
