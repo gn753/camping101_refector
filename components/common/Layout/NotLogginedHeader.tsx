@@ -1,28 +1,7 @@
 import styled from "@emotion/styled";
-import { authUserData } from "@libs/store/authStore";
 import Link from "next/link";
-import { useEffect } from "react";
-import { atom, useRecoilState, useRecoilValue } from "recoil";
-import LogginedTobBar from "./LogginedTobBar";
 
-export const loadingAtom = atom({
-  key: "loadingAtom ",
-  default: true,
-});
-
-function SkeletonUi() {
-  return <SkeletonWrapper />;
-}
-
-export default function Header() {
-  const user = useRecoilValue(authUserData);
-  const [loading, setLoading] = useRecoilState(loadingAtom);
-
-  useEffect(() => {
-    if (user) {
-      setTimeout(() => setLoading(false), 1000);
-    }
-  }, [user, setLoading]);
+export default function NotLogginedHeader() {
   return (
     <>
       <Wrapper>
@@ -43,18 +22,14 @@ export default function Header() {
           </List>
 
           <List>
-            {user ? (
-              <LogginedTobBar user={user} />
-            ) : (
-              <>
-                <Link href="/login" className="h5">
-                  <i>아이콘</i>로그인
-                </Link>
-                <Link href="/join" className="h5">
-                  회원가입
-                </Link>
-              </>
-            )}
+            <>
+              <Link href="/login" className="h5">
+                <i>아이콘</i>로그인
+              </Link>
+              <Link href="/join" className="h5">
+                회원가입
+              </Link>
+            </>
           </List>
         </NavigationWrapper>
       </Wrapper>

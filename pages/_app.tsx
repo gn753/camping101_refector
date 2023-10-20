@@ -5,7 +5,7 @@ import { Suspense } from "react";
 import { RecoilRoot } from "recoil";
 import { global } from "libs/styles/global";
 import theme from "libs/styles/theme";
-import AuthCheck from "@components/common/AuthCheck/AuthCheck";
+import withAuthGuardAndRouter from "@components/common/withAuthGuardAndRouter/withAuthGuardAndRouter";
 
 const notoSans = Noto_Sans({
   weight: ["300", "400", "500", "600", "700"],
@@ -13,14 +13,14 @@ const notoSans = Noto_Sans({
 });
 
 export default function App({ Component, pageProps }: AppProps) {
+  const AuthComponent = withAuthGuardAndRouter(Component);
   return (
     <RecoilRoot>
       <ThemeProvider theme={theme}>
         <Global styles={global} />
         <Suspense fallback={<div>로딩</div>}>
           <div className={notoSans.className}>
-            <AuthCheck />
-            <Component {...pageProps} />
+            <AuthComponent {...pageProps} />
           </div>
         </Suspense>
       </ThemeProvider>

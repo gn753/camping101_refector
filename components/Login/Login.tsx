@@ -1,15 +1,19 @@
 import styled from "@emotion/styled";
+import { authUserData } from "@libs/store/authStore";
+import { useRouter } from "next/router";
 import TitleSection from "@components/common/TitleSection";
 import Form from "./Form";
 
 export default function Login() {
   return (
-    <Container>
-      <Wrapper>
-        <TitleSection title="로그인" />
-        <Form />
-      </Wrapper>
-    </Container>
+    <>
+      <Container>
+        <Wrapper>
+          <TitleSection title="로그인" />
+          <Form />
+        </Wrapper>
+      </Container>
+    </>
   );
 }
 

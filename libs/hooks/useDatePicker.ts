@@ -26,6 +26,7 @@ export default function useDatePicker() {
     return dateDiff;
   };
 
+  // 선택한 캘린더의 날짜가 시작날짜와 종료날짜 사이에 있는 지 판별
   const isBetweendDate = (
     betweendDate: string,
     startDate: string,
@@ -38,6 +39,7 @@ export default function useDatePicker() {
 
     return result;
   };
+  // 날짜 선택기
 
   const pickerMultipleDateRange = (clickedDate: string) => {
     const { startDate } = pick;

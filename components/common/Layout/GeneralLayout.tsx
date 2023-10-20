@@ -1,15 +1,17 @@
 import styled from "@emotion/styled";
 import { ReactNode } from "libs/types";
 import Footer from "./Footer";
-import Header from "./Header";
+import LogginedHeader from "./LogginedHeader";
+import NotLogginedHeader from "./NotLogginedHeader";
 
 type LayoutProps = {
   children: ReactNode;
+  isLogin: boolean;
 };
-export default function Layout({ children }: LayoutProps) {
+export default function GeneralLayout({ children, isLogin }: LayoutProps) {
   return (
     <div>
-      <Header />
+      {isLogin ? <LogginedHeader /> : <NotLogginedHeader />}
       <Main>{children}</Main>
       <Footer />
     </div>

@@ -41,7 +41,7 @@ export default function useBookmark({ userId }: any) {
         getBookmarks(userId);
       }
     }
-  }, [userId, setBookmarkList]);
+  }, [getBookmarks, userId]);
 
   return {
     removeBookmark,

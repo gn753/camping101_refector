@@ -1,7 +1,6 @@
 import getCampResvDetails from "@pages/api/getCampResvDetails ";
 import Head from "next/head";
 import Resv from "@components/Resv/Resv";
-import Layout from "components/common/Layout/Layout";
 
 export default function ResvPage({ campResvDetails }: any) {
   return (
@@ -9,9 +8,7 @@ export default function ResvPage({ campResvDetails }: any) {
       <Head>
         <title>캠핑 101 페이지</title>
       </Head>
-      <Layout>
-        <Resv campResvDetails={campResvDetails} />
-      </Layout>
+      <Resv campResvDetails={campResvDetails} />
     </>
   );
 }

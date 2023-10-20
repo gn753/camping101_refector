@@ -57,7 +57,6 @@ export default function useIsReservationPossible({
 
   useEffect(() => {
     if (!typeof window !== undefined && reservationInSiteList) {
-      console.log(reservationInSiteList, "dsdssd");
       const findResv = reservationInSiteList.find(
         (예약데이터: any) =>
           예약데이터 && getAvailableCampSite(pick, 예약데이터),

@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
+import useCalendarList from "@libs/hooks/useCalendarList";
 import Calendar from "./Calendar/Calendar";
-import useCalendarList from "./Calendar/useCalendarList";
 import CampBanner from "./CampBanner";
 import CampMainInfo from "./CampMainInfo";
 import ResvSite from "./ResvSite/ResvSite";
@@ -13,7 +13,7 @@ export default function Resv({ campResvDetails }: any) {
     <Container>
       <CampBanner />
       <CampMainInfo campResvDetails={campResvDetails} />
-      <Calendar calendarDatas={dateList} />
+      <Calendar calendarDatas={dateList} resvList={siteInCampList} />
       <ResvSite resvList={siteInCampList} />
       <ReviewList reviewList={campLogInCampList} />
     </Container>

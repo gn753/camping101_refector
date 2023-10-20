@@ -1,16 +1,17 @@
 import styled from "@emotion/styled";
+import useDatePicker from "@libs/hooks/useDatePicker";
 import moment from "moment";
 import "moment/locale/ko";
 import { useRef } from "react";
 import CalendarDate from "./CalendarDate";
 import CalendarWeek from "./CalendarWeek";
-import useDatePicker from "./useDatePicker";
 
 interface Props {
   monthDates: any;
+  resvList: any;
 }
 
-export default function CalendarItem({ monthDates }: Props) {
+export default function CalendarItem({ monthDates, resvList }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const { pickerMultipleDateRange, pick, isBetweendDate } = useDatePicker();
 

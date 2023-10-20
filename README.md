@@ -3,7 +3,7 @@
 <img width="1304" alt="캠핑장-01" src="https://github.com/gn753/camping101_refector/assets/71584114/77d951a4-2603-42a1-8e99-775351f2f091">
 [배포링크](https://vercel.live/link/camping101-refector.vercel.app?via=project-overview-visit-button)
 
-[리팩토링 이전]("https://github.com/gn753/camping101_Front.git)
+[리팩토링 이전](https://github.com/gn753/camping101_Front.git)
 
 팀 프로젝트로 백엔드 개발자 2명 프론트엔드 1명으로 구성된 개발한 캠핑예약서비스입니다.
 

@@ -1,7 +1,6 @@
 import axiosInstance from "@libs/api/axiosInstance";
 import Head from "next/head";
 import ReviewDetails from "@components/ReviewDetails/ReviewDetails";
-import Layout from "@components/common/Layout/Layout";
 
 export default function CampLogDetailsPage({ data, id }: any) {
   return (
@@ -9,9 +8,7 @@ export default function CampLogDetailsPage({ data, id }: any) {
       <Head>
         <title>캠프리뷰상세페이지</title>
       </Head>
-      <Layout>
-        <ReviewDetails data={data} id={id} />
-      </Layout>
+      <ReviewDetails data={data} id={id} />
     </>
   );
 }

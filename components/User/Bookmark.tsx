@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 import useBookmark from "@libs/hooks/useBookmark";
+import usePagination from "@libs/hooks/usePagination";
 import TitleSection from "@components/Review/ContentTitleSection";
 import Pagination from "@components/common/Pagination/Pagination";
-import usePagination from "@components/common/Pagination/usePagination";
 import BookmarkCard from "./BookmarkCard";
 
 interface Props {

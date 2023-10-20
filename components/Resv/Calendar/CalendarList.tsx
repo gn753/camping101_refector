@@ -3,7 +3,7 @@ import moment from "moment";
 import { useState } from "react";
 import CalendarItem from "./CalendarItem ";
 
-export default function CalendarList({ data }: any) {
+export default function CalendarList({ data, resvList }: any) {
   const [calendarIndex, setCalendarIndex] = useState(0);
 
   const nextMonth = () => {
@@ -34,6 +34,7 @@ export default function CalendarList({ data }: any) {
       <MonthsContainer>
         {data && data.length > 0 && (
           <CalendarItem
+            resvList={resvList}
             monthDates={data[calendarIndex]}
             key={`${data[0].date}`}
           />

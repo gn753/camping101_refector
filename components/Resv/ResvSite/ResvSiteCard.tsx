@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useRecoilValue } from "recoil";
 import useDatePicker from "../Calendar/useDatePicker";
 import { IsResvSiteList } from "./ResvSiteType";
-import useIsReservationPossible from "./resvSiteHook";
+import useIsReservationPossible from "./useIsReservationPossible";
 
 export default function ResvSiteCard({ ...rest }: IsResvSiteList) {
   const { siteId, name, checkIn, price, introduction, reservationInSiteList } =
