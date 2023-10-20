@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import useCalendarList from "@libs/hooks/useCalendarList";
 import Calendar from "./Calendar/Calendar";
 import CampBanner from "./CampBanner";
 import CampMainInfo from "./CampMainInfo";
@@ -8,12 +7,12 @@ import ReviewList from "./ReviewList";
 
 export default function Resv({ campResvDetails }: any) {
   const { campLogInCampList, siteInCampList } = campResvDetails;
-  const { dateList } = useCalendarList();
+
   return (
     <Container>
       <CampBanner />
       <CampMainInfo campResvDetails={campResvDetails} />
-      <Calendar calendarDatas={dateList} resvList={siteInCampList} />
+      <Calendar reservationData={siteInCampList[0].reservationInSiteList} />
       <ResvSite resvList={siteInCampList} />
       <ReviewList reviewList={campLogInCampList} />
     </Container>

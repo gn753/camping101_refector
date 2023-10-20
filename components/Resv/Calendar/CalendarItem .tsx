@@ -8,18 +8,18 @@ import CalendarWeek from "./CalendarWeek";
 
 interface Props {
   monthDates: any;
-  resvList: any;
+  renderMonth: any;
 }
 
-export default function CalendarItem({ monthDates, resvList }: Props) {
+export default function CalendarItem({ monthDates, renderMonth }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const { pickerMultipleDateRange, pick, isBetweendDate } = useDatePicker();
 
   const firstDay = moment(monthDates[0].date).day();
-  const calendarMonth = monthDates[0].date.slice(0, 7);
+
   return (
     <Wrapper>
-      <Title className="h5">{calendarMonth}월</Title>
+      <Title className="h5">{renderMonth}</Title>
       <CalendarWeek />
       <CalendarMonthWrapper ref={ref}>
         {[...Array(firstDay)].map((_, index) => (

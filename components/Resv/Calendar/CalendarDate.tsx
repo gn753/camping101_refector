@@ -20,13 +20,7 @@ export default function CalendarDate({
   isBetweenDate,
 }: Props) {
   const ref = useRef<HTMLDivElement>(null);
-  const testType = {
-    data,
-    day,
-    pickerMultipleDateRange,
-    pick,
-    isBetweenDate,
-  };
+
   const { startDate, endDate } = pick;
 
   const devideDate = () => {
@@ -45,7 +39,7 @@ export default function CalendarDate({
 
   return (
     <>
-      {data.isPast ? (
+      {data.availability === "예약 불가능" ? (
         <NotSale disabled>{day + 1}</NotSale>
       ) : (
         <OnSale
