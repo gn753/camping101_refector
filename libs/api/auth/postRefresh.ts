@@ -3,7 +3,7 @@ import {
   removeAccessAndRefresh,
 } from "@libs/services/authTokenService";
 import { isAxiosError } from "axios";
-import axiosInstance from "../axiosInstance";
+import fetchClientTokenApi from "../fetchClientTokenApi;";
 
 interface Error {
   status: number;
@@ -13,8 +13,9 @@ interface Error {
 
 const data: any = {};
 const postRefresh = async () => {
+  const api = fetchClientTokenApi();
   try {
-    const response = await axiosInstance.post(
+    const response = await api.post(
       "/api/signin/refresh",
       (data["refresh-token"] = `Bearer ${getRefreshToken()}`),
     );
@@ -25,9 +26,7 @@ const postRefresh = async () => {
       const message = error.response?.data.error_message;
       if (status === 401) {
         removeAccessAndRefresh();
-        console.log(`${status} : ${message}`);
         alert("로그인이 만료되었습니다. 다시 로그인해주세요");
-        window.location.href = "/login";
       }
     }
   }

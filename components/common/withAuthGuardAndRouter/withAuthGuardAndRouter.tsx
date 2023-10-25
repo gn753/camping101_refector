@@ -26,14 +26,14 @@ const withAuthGuardAndRouter = (WrappedComponent: React.ComponentType) => {
     // 권한이 있을 때는 해당 컴포넌트를 보여줌.
     if (user) {
       return (
-        <GeneralLayout isLogin>
+        <GeneralLayout>
           <WrappedComponent {...props} />;
         </GeneralLayout>
       );
     }
 
     return (
-      <GeneralLayout isLogin={false}>
+      <GeneralLayout>
         <WrappedComponent {...props} />;
       </GeneralLayout>
     );

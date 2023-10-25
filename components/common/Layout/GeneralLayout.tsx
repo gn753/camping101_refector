@@ -1,14 +1,16 @@
 import styled from "@emotion/styled";
+import { authAccessTokenAtom } from "@libs/store/authStore";
 import { ReactNode } from "libs/types";
+import { useRecoilValue } from "recoil";
 import Footer from "./Footer";
 import LogginedHeader from "./LogginedHeader";
 import NotLogginedHeader from "./NotLogginedHeader";
 
 type LayoutProps = {
   children: ReactNode;
-  isLogin: boolean;
 };
-export default function GeneralLayout({ children, isLogin }: LayoutProps) {
+export default function GeneralLayout({ children }: LayoutProps) {
+  const isLogin = useRecoilValue(authAccessTokenAtom);
   return (
     <div>
       {isLogin ? <LogginedHeader /> : <NotLogginedHeader />}

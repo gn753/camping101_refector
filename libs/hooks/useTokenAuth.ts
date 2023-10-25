@@ -1,17 +1,16 @@
 import getUserData from "@libs/api/auth/getUserData";
 import postRefresh from "@libs/api/auth/postRefresh";
 import { IsAxiosErrorType } from "@libs/api/axiosErrorType";
-import axiosInstance from "@libs/api/axiosInstance";
 import { getRefreshToken } from "@libs/services/authTokenService";
-import { authLoginAtom, authUserData } from "@libs/store/authStore";
-import { isAxiosError } from "axios";
+import { authAccessTokenAtom, authUserData } from "@libs/store/authStore";
+import axios, { isAxiosError } from "axios";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 
 export default function useTokenAuth() {
   const [user, setUser] = useRecoilState(authUserData);
-  const [accessToken, setAccessToken] = useRecoilState(authLoginAtom);
+  const [accessToken, setAccessToken] = useRecoilState(authAccessTokenAtom);
   const [loading, setLoading] = useState(true); // 추가: 로딩 상태를 관리
   const router = useRouter();
   const currentPath = router.pathname;
@@ -25,9 +24,9 @@ export default function useTokenAuth() {
           .then((response) => {
             const token = response?.data["access-token"];
             setAccessToken(token);
-            delete axiosInstance.defaults.headers.common.Authorization;
-            axiosInstance.defaults.headers.common.Authorization = token;
-            getUserData(token).then((res) => {
+            delete axios.defaults.headers.common.Authorization;
+            axios.defaults.headers.common.Authorization = token;
+            getUserData().then((res) => {
               setUser(res.data);
               setLoading(false); // 데이터를 가져왔을 때 로딩 상태를 false로 변경
             });

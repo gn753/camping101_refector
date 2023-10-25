@@ -10,7 +10,7 @@ interface IsUserDataProps {
   sign_up_type: string;
 }
 
-export const authLoginAtom = atom<string | null>({
+export const authAccessTokenAtom = atom<string | null>({
   key: "authLoginAtom",
   default: null,
 });

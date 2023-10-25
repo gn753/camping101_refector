@@ -1,10 +1,9 @@
-import axiosInstance from "./axiosInstance";
+import fetchClientTokenApi from "./fetchClientTokenApi;";
 import { IsGetResvList } from "./getResvListType";
 
 const getResvList = async (userId: number): Promise<IsGetResvList[]> => {
-  const response = await axiosInstance.get(
-    `/api/reservation/customer/${userId}`,
-  );
+  const api = fetchClientTokenApi();
+  const response = await api.get(`/api/reservation/customer/${userId}`);
   return response.data;
 };
 

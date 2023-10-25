@@ -1,6 +1,4 @@
 import styled from "@emotion/styled";
-import { authUserData } from "@libs/store/authStore";
-import { useRouter } from "next/router";
 import TitleSection from "@components/common/TitleSection";
 import Form from "./Form";
 
@@ -20,12 +18,12 @@ export default function Login() {
 const Container = styled.div`
   position: relative;
   width: 768px;
-  height: 100%;
+  height: 500px;
   margin: auto;
 `;
 const Wrapper = styled.div`
   position: absolute;
-  top: 35%;
-  left: 35%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
 `;

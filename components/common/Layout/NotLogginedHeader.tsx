@@ -22,14 +22,12 @@ export default function NotLogginedHeader() {
           </List>
 
           <List>
-            <>
-              <Link href="/login" className="h5">
-                <i>아이콘</i>로그인
-              </Link>
-              <Link href="/join" className="h5">
-                회원가입
-              </Link>
-            </>
+            <Link href="/login" className="h5">
+              <i>아이콘</i>로그인
+            </Link>
+            <Link href="/join" className="h5">
+              회원가입
+            </Link>
           </List>
         </NavigationWrapper>
       </Wrapper>

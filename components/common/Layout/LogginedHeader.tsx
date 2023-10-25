@@ -44,13 +44,15 @@ export default function LogginedHeader() {
               캠핑장 리뷰
             </Link>
           </List>
-          <UserProfile href="/user">
-            <ProfileIcon />
-            <span className="h5">{user && user.nickname}</span>
-          </UserProfile>
-          <LogoutButton onClick={logout}>
-            <span className="h5">로그아웃</span>
-          </LogoutButton>
+          <List>
+            <UserProfile href="/user">
+              <ProfileIcon />
+              <span className="h5">{user && user.nickname}</span>
+            </UserProfile>
+            <LogoutButton onClick={logout}>
+              <span className="h5">{user && user.nickname && "로그아웃"} </span>
+            </LogoutButton>
+          </List>
         </NavigationWrapper>
       </Wrapper>
     </>

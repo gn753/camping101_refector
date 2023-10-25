@@ -1,8 +1,9 @@
-import axiosInstance from "@libs/api/axiosInstance";
+import fetchClientTokenApi from "../fetchClientTokenApi;";
 
-const getUserData = async (accessToken?:any) => {
+const getUserData = async () => {
+  const axiosInstance = fetchClientTokenApi();
   const url = "/api/member";
-  axiosInstance.defaults.headers.common.Authorization = accessToken;
+
   const response = await axiosInstance.get(url);
   return response;
 };

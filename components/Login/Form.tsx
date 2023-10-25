@@ -5,7 +5,8 @@ import {
   setRefreshToken,
   tokenWithoutBearer,
 } from "@libs/services/authTokenService";
-import { authLoginAtom, authUserData } from "@libs/store/authStore";
+import { authAccessTokenAtom, authUserData } from "@libs/store/authStore";
+import axios from "axios";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -21,7 +22,7 @@ interface IsUseFormProps {
 export default function Form() {
   const [isLoading, setIsLoading] = useState(false);
   const setUser = useSetRecoilState(authUserData);
-  const setLogin = useSetRecoilState(authLoginAtom);
+  const setLogin = useSetRecoilState(authAccessTokenAtom);
   const {
     register,
     formState: { errors },
@@ -45,8 +46,9 @@ export default function Form() {
         setRefreshToken(refreshToken);
         setIsLoading(false);
         setLogin(accessToken);
-        getUserData(accessToken).then((response) => setUser(response.data));
-        router.push("/");
+        axios.defaults.headers.common.Authorization = accessToken;
+
+        getUserData().then((response) => setUser(response.data));
       })
       .catch((error) => {
         setIsLoading(false);
