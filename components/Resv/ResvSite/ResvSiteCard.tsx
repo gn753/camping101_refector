@@ -1,10 +1,10 @@
 import styled from "@emotion/styled";
-import useDatePicker from "@libs/hooks/useDatePicker";
+import useDatePicker from "@components/Resv/hooks/useDatePicker";
 import { authUserData } from "@libs/store/authStore";
 import postSiteResv from "@pages/api/postSiteResv";
 import Image from "next/image";
 import { useRecoilValue } from "recoil";
-import { IsResvSiteList } from "./ResvSiteType";
+import { IsResvSiteList } from "./ResvSite.interface";
 import useIsReservationPossible from "./useIsReservationPossible";
 
 export default function ResvSiteCard({ ...rest }: IsResvSiteList) {

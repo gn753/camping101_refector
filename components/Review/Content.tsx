@@ -1,9 +1,9 @@
 import styled from "@emotion/styled";
-import usePagination from "@libs/hooks/usePagination";
+import usePagination from "@components/common/Pagination/hooks/usePagination";
 import ReviewCard from "@components/common/Card/ReviewCard";
 import Pagination from "@components/common/Pagination/Pagination";
 import TitleSection from "./ContentTitleSection";
-import { IsReviewPageProps } from "./reviewType";
+import { IsReviewPageProps } from "./review.interface";
 
 export default function Content({ reviews }: IsReviewPageProps) {
   const campReviews = reviews.campLogs;

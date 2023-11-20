@@ -1,18 +1,11 @@
 import { decode } from "jsonwebtoken";
 
-export const getAccessToken = () => {
-  if (typeof window !== "undefined") {
-    return sessionStorage.getItem("access-token");
-  }
-};
 export const getRefreshToken = () => {
   if (typeof window !== "undefined") {
     return sessionStorage.getItem("refresh-token");
   }
 };
-export const setAccessToken = (token: string) => {
-  sessionStorage.setItem("access-token", token);
-};
+
 export const setRefreshToken = (token: string) => {
   return sessionStorage.setItem("refresh-token", token);
 };
@@ -23,7 +16,6 @@ export const tokenWithoutBearer = (token: string) => {
 export const setAccessAndRefreshToken = (res: any) => {
   const accessToken = tokenWithoutBearer(res.headers["access-token"]);
   const refreshToken = tokenWithoutBearer(res.headers["refresh-token"]);
-  setAccessToken(accessToken);
   setRefreshToken(refreshToken);
 };
 

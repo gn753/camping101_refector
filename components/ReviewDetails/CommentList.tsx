@@ -1,5 +1,5 @@
 import CommentItem from "./CommentItem";
-import { IsCommentItem, IsCommentService } from "./CommentType";
+import { IsCommentItem, IsCommentService } from "./comment.interface";
 
 interface Props extends IsCommentService {
   comments: IsCommentItem[];

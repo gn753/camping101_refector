@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import Link from "next/link";
 import CampCard from "@components/common/Card/CampCard";
 import ReviewCard from "@components/common/Card/ReviewCard";
-import { IsHomePageProps } from "./homeType";
+import { IsHomePageProps } from "./home.interface";
 
 export default function Content({ camps, reviews }: IsHomePageProps) {
   const campReviews = reviews.campLogs;

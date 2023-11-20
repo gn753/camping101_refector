@@ -3,7 +3,7 @@ import { authUserData } from "@libs/store/authStore";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { useRecoilValue } from "recoil";
-import { IsCommentItem, IsCommentService } from "./CommentType";
+import { IsCommentItem, IsCommentService } from "./comment.interface";
 import ReComment from "./ReComment";
 
 interface Props extends IsCommentService {

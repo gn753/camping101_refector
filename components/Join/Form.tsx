@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import Button from "@components/common/Button/StyledButton";
 import ErrorMessage from "./ErrorMessage";
 import FormInputValidation from "./FormInputValidation";
-import { IsUseJoinForm } from "./FormType";
+import { IsUseJoinForm } from "./Form.interface";
 
 export default function Form() {
   const [isLoading, setIsLoading] = useState(false);

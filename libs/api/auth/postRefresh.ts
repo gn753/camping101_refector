@@ -1,9 +1,9 @@
 import {
   getRefreshToken,
   removeAccessAndRefresh,
-} from "@libs/services/authTokenService";
+} from "@components/common/Auth/authToken.service";
 import { isAxiosError } from "axios";
-import fetchClientTokenApi from "../fetchClientTokenApi;";
+import fetchClientTokenApi from "../fetchClientTokenApi";
 
 interface Error {
   status: number;

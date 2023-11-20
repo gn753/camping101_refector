@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import useBookmark from "@libs/hooks/useBookmark";
-import usePagination from "@libs/hooks/usePagination";
+import usePagination from "@components/common/Pagination/hooks/usePagination";
 import TitleSection from "@components/Review/ContentTitleSection";
 import Pagination from "@components/common/Pagination/Pagination";
 import BookmarkCard from "./BookmarkCard";

@@ -45,7 +45,10 @@ export default function LogginedHeader() {
             </Link>
           </List>
           <List>
-            <UserProfile href="/user">
+            <Link href="/user" className="h5">
+              마이페이지
+            </Link>
+            <UserProfile href="/">
               <ProfileIcon />
               <span className="h5">{user && user.nickname}</span>
             </UserProfile>

@@ -47,8 +47,7 @@
   ├── ReviewDetails 리뷰 상세페이지  
   ├── User 마이페이지  
   └── common 공통  
-  ├── AuthCheck 새로고침 시 유저검증  
-  │ └── AuthCheck.tsx
+   ├── Auth
 
 - libs : 전역적으로 재사용가능한 상태, api 모음
 - pages : 서버사이드전용 api 및 페이지 컴포넌트

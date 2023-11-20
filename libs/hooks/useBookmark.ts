@@ -1,7 +1,7 @@
 import deleteBookmark from "@libs/api/deleteBookmark";
 import getUserBookmarkList from "@libs/api/getUserBookmarkList";
 import postBookmarkCreate from "@libs/api/postBookmark";
-import { IsPostBookmark } from "@libs/api/postBookmarkType";
+import { IsPostBookmark } from "@libs/api/postBookmark.interface";
 import { bookmarkListAtom } from "@libs/store/bookmarkStore";
 import { useCallback, useEffect } from "react";
 import { useRecoilState } from "recoil";

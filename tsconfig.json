@@ -14,7 +14,7 @@
     "resolveJsonModule": true, // json 허용
     "isolatedModules": true,
     "jsx": "preserve",
-    "noImplicitAny": true, //any 타입으로 암시한 표현식과 선언에 오류를 발생시킵니다.
+    "noImplicitAny": true, //any 타입으로 암시한 표현식과 선언에 오류를 발생.
     "strictNullChecks": true,
     "allowSyntheticDefaultImports": true,
     "noFallthroughCasesInSwitch": true,
@@ -33,14 +33,6 @@
       }
     ]
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".d.ts",
-    ".d",
-    "next.config.js",
-    "components/User/Bookmarktsx"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }

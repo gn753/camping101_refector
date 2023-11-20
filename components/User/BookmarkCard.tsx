@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { IsGetUserBookmarkList } from "@libs/api/getBookmarkListType";
+import { IsGetUserBookmarkList } from "@libs/api/getBookmarkList.interface";
 import Link from "next/link";
 import Button from "@components/common/Button/StyledButton";
 

@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { IsReviewDetails } from "@pages/api/getReviewsType";
+import { IsReviewDetails } from "@pages/api/getReviews.interface";
 import Link from "next/link";
 
 export default function ReviewCard({ ...data }: IsReviewDetails) {

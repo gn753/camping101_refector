@@ -12,7 +12,7 @@ import { useEffect, useState } from "react";
 import { useRecoilValue } from "recoil";
 import Button from "@components/common/Button/StyledButton";
 import CommentList from "./CommentList";
-import { IsCommentItem } from "./CommentType";
+import { IsCommentItem } from "./comment.interface";
 
 interface IsCommentService {
   onDeleteComment: (commentId: number) => void;

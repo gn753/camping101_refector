@@ -4,7 +4,7 @@ import postLogin from "@libs/api/auth/postLogin";
 import {
   setRefreshToken,
   tokenWithoutBearer,
-} from "@libs/services/authTokenService";
+} from "@components/common/Auth/authToken.service";
 import { authAccessTokenAtom, authUserData } from "@libs/store/authStore";
 import axios from "axios";
 import { useRouter } from "next/router";

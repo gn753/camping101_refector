@@ -1,4 +1,4 @@
-import { IsCamp } from "@pages/api/getCampsType";
+import { IsCamp } from "@pages/api/getCamps.interface";
 
 export interface IsCampPageProps {
   camps: IsCamp[];

@@ -15,7 +15,6 @@ export default function GeneralLayout({ children }: LayoutProps) {
     <div>
       {isLogin ? <LogginedHeader /> : <NotLogginedHeader />}
       <Main>{children}</Main>
-      <Footer />
     </div>
   );
 }

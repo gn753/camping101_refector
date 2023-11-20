@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import usePagination from "@libs/hooks/usePagination";
+import usePagination from "@components/common/Pagination/hooks/usePagination";
 import resvList from "@public/data/resvList.json";
 import ResvSiteCard from "@components/Resv/ResvSite/ResvSiteCard";
 import TitleSection from "@components/Review/ContentTitleSection";

@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import TitleSection from "@components/Review/ContentTitleSection";
 import ResvSiteCard from "./ResvSiteCard";
-import { IsResvSiteList } from "./ResvSiteType";
+import { IsResvSiteList } from "./ResvSite.interface";
 
 interface Props {
   resvList: IsResvSiteList[];

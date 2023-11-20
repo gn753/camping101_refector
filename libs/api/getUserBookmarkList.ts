@@ -1,5 +1,4 @@
-import axiosInstance from "./axiosInstance";
-import fetchClientTokenApi from "./fetchClientTokenApi;";
+import fetchClientTokenApi from "./fetchClientTokenApi";
 
 const url = "/api/bookmark/";
 

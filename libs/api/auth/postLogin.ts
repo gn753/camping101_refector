@@ -1,4 +1,4 @@
-import { IsAxiosErrorType } from "@libs/api/axiosErrorType";
+import { IsAxiosErrorType } from "@libs/api/axiosError.interface";
 import { isAxiosError } from "axios";
 import axiosInstance from "../axiosInstance";
 

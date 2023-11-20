@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import Banner from "./Banner";
 import Content from "./Content";
-import { IsHomePageProps } from "./homeType";
+import { IsHomePageProps } from "./home.interface";
 
 export default function Home({ camps, reviews }: IsHomePageProps) {
   return (

@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { IsCamp } from "@pages/api/getCampsType";
+import { IsCamp } from "@pages/api/getCamps.interface";
 import Image from "next/image";
 import Link from "next/link";
 

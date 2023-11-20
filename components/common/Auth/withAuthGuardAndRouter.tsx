@@ -1,4 +1,4 @@
-import useTokenAuth from "@libs/hooks/useTokenAuth";
+import useTokenAuth from "@components/common/Auth/hooks/useTokenAuth";
 import GeneralLayout from "../Layout/GeneralLayout";
 
 // 고차컴포넌트는 소문자로 명명

@@ -1,7 +1,7 @@
 import getUserData from "@libs/api/auth/getUserData";
 import postRefresh from "@libs/api/auth/postRefresh";
-import { IsAxiosErrorType } from "@libs/api/axiosErrorType";
-import { getRefreshToken } from "@libs/services/authTokenService";
+import { IsAxiosErrorType } from "@libs/api/axiosError.interface";
+import { getRefreshToken } from "@components/common/Auth/authToken.service";
 import { authAccessTokenAtom, authUserData } from "@libs/store/authStore";
 import axios, { isAxiosError } from "axios";
 import { useRouter } from "next/router";

@@ -1,9 +1,9 @@
 import Head from "next/head";
 import Home from "components/Home/Home";
 import getCamps from "./api/getCamps";
-import { IsCamp } from "./api/getCampsType";
+import { IsCamp } from "./api/getCamps.interface";
 import getReviews from "./api/getReviews";
-import { IsReviews } from "./api/getReviewsType";
+import { IsReviews } from "./api/getReviews.interface";
 
 interface IsHomePageProps {
   reviews: IsReviews;

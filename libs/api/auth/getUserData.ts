@@ -1,4 +1,4 @@
-import fetchClientTokenApi from "../fetchClientTokenApi;";
+import fetchClientTokenApi from "../fetchClientTokenApi";
 
 const getUserData = async () => {
   const axiosInstance = fetchClientTokenApi();

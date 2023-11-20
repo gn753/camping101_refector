@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import Content from "./Comtent";
-import { IsCampPageProps } from "./campType";
+import { IsCampPageProps } from "./camp.interface";
 
 export default function Camp({ camps }: IsCampPageProps) {
   return (

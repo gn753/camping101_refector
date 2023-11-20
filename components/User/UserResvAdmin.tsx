@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
-import { IsAxiosErrorType } from "@libs/api/axiosErrorType";
+import { IsAxiosErrorType } from "@libs/api/axiosError.interface";
 import axiosInstance from "@libs/api/axiosInstance";
 import getResvList from "@libs/api/getResvList";
-import usePagination from "@libs/hooks/usePagination";
+import usePagination from "@components/common/Pagination/hooks/usePagination";
 import { isAxiosError } from "axios";
 import { Suspense, useEffect, useState } from "react";
 import TitleSection from "@components/Review/ContentTitleSection";

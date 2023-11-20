@@ -1,5 +1,5 @@
 import getReviews from "@pages/api/getReviews";
-import { IsReviews } from "@pages/api/getReviewsType";
+import { IsReviews } from "@pages/api/getReviews.interface";
 import Head from "next/head";
 import Review from "@components/Review/Review";
 

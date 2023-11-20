@@ -1,6 +1,5 @@
-import axiosInstance from "./axiosInstance";
-import fetchClientTokenApi from "./fetchClientTokenApi;";
-import { IsPostBookmark } from "./postBookmarkType";
+import fetchClientTokenApi from "./fetchClientTokenApi";
+import { IsPostBookmark } from "./postBookmark.interface";
 
 const url = "/api/bookmark";
 

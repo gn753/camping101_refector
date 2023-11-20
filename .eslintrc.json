@@ -10,9 +10,10 @@
     "ecmaFeatures": {
       "jsx": true
     },
+    "createDefaultProgram": true,
     "ecmaVersion": "latest",
     "sourceType": "module",
-    "project": "./tsconfig.json"
+    "project": ["tsconfig.json"]
   },
   "ignorePatterns": ["jest.*.js"],
   "extends": [
@@ -22,7 +23,8 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:@next/next/recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "@typescript-eslint/parser"
   ],
   "plugins": ["prettier", "@typescript-eslint", "import"],
   "rules": {
@@ -63,7 +65,9 @@
         "ts": "never",
         "js": "never",
         "jsx": "never",
-        "json": "always"
+        "json": "always",
+        "interface": "always",
+        "service": "always"
       }
     ]
   }

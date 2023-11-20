@@ -1,9 +1,9 @@
 import styled from "@emotion/styled";
-import usePagination from "@libs/hooks/usePagination";
+import usePagination from "@components/common/Pagination/hooks/usePagination";
 import TitleSection from "@components/Review/ContentTitleSection";
 import CampCard from "@components/common/Card/CampCard";
 import Pagination from "@components/common/Pagination/Pagination";
-import { IsCampPageProps } from "./campType";
+import { IsCampPageProps } from "./camp.interface";
 
 export default function Content({ camps }: IsCampPageProps) {
   const { offset, limit, nextArrow, prevArrow, page, updatePagination } =

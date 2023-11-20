@@ -1,5 +1,5 @@
-import fetchClientTokenApi from "./fetchClientTokenApi;";
-import { IsGetResvList } from "./getResvListType";
+import fetchClientTokenApi from "./fetchClientTokenApi";
+import { IsGetResvList } from "./getResvList.interface";
 
 const getResvList = async (userId: number): Promise<IsGetResvList[]> => {
   const api = fetchClientTokenApi();

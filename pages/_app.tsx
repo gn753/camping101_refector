@@ -5,7 +5,7 @@ import { Suspense } from "react";
 import { RecoilRoot } from "recoil";
 import { global } from "libs/styles/global";
 import theme from "libs/styles/theme";
-import withAuthGuardAndRouter from "@components/common/withAuthGuardAndRouter/withAuthGuardAndRouter";
+import withAuthGuardAndRouter from "@components/common/Auth/withAuthGuardAndRouter";
 
 const notoSans = Noto_Sans({
   weight: ["300", "400", "500", "600", "700"],

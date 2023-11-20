@@ -1,5 +1,5 @@
 import getCamps from "@pages/api/getCamps";
-import { IsCamp } from "@pages/api/getCampsType";
+import { IsCamp } from "@pages/api/getCamps.interface";
 import Head from "next/head";
 import Camp from "@components/Camp/Camp";
 
