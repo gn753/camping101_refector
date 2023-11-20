@@ -9,7 +9,11 @@ export default function Calendar({ reservationData }: any) {
       <CalendarWrapper>
         <CalendarContainer>
           {Array.from({ length: 3 }).map((_, index) => (
-            <CalendarMonth reservationData={reservationData} index={index} />
+            <CalendarMonth
+              reservationData={reservationData}
+              index={index}
+              key={`캘린더-${index}`}
+            />
           ))}
         </CalendarContainer>
       </CalendarWrapper>

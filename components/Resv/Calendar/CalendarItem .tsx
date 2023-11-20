@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
-import useDatePicker from "@components/Resv/hooks/useDatePicker";
 import moment from "moment";
 import "moment/locale/ko";
 import { useRef } from "react";
+import useDatePicker from "@components/Resv/hooks/useDatePicker";
 import CalendarDate from "./CalendarDate";
 import CalendarWeek from "./CalendarWeek";
 
@@ -16,13 +16,13 @@ export default function CalendarItem({ monthDates, renderMonth }: Props) {
   const { pickerMultipleDateRange, pick, isBetweendDate } = useDatePicker();
 
   const firstDay = moment(monthDates[0].date).day();
-
+  console.log(monthDates, "firstDay");
   return (
     <Wrapper>
       <Title className="h5">{renderMonth}</Title>
       <CalendarWeek />
       <CalendarMonthWrapper ref={ref}>
-        {[...Array(firstDay)].map((_, index) => (
+        {Array.from({ length: firstDay }).map((_, index) => (
           <Blank key={index} />
         ))}
         {monthDates.map((data: any, index: number) => (
