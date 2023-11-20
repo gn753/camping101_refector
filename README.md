@@ -1,7 +1,7 @@
 ## 소개
 
 <img width="1304" alt="캠핑장-01" src="https://github.com/gn753/camping101_refector/assets/71584114/77d951a4-2603-42a1-8e99-775351f2f091">
-[배포링크](https://vercel.live/link/camping101-refector.vercel.app?via=project-overview-visit-button)
+[배포링크]([https://vercel.live/link/camping101-refector.vercel.app?via=project-overview-visit-button](https://camping101-refector.vercel.app/ko?vercelToolbarCode=hUsqH4h6jvFddQk))
 
 [리팩토링 이전](https://github.com/gn753/camping101_Front.git)
 
@@ -11,6 +11,8 @@
 테스트용 비밀번호:1234
 
 ### 저의 작업 내역
+![1120234201567591](https://github.com/gn753/camping101_refector/assets/71584114/7ac8c9d9-15fd-4fce-b2bb-838ebd886d48)
+
 
 - **[예약 서비스를 위한 캘린더 Form 개발]**
 
@@ -53,6 +55,17 @@
     클라이언트 측 토큰 검증을 통해 쿠키 제한으로 발생하는 깜빡임 문제를 대응하였으며, 액세스 권한을 관리하는 컴포넌트에 `인증 처리를 하는 컴포넌트(HOC)`를 적용했습니다.
 
   - **회고:** 이 경험을 통해 서버와 클라이언트 간의 통신에서 발생하는 이슈를 해결하는데 중요한 역량을 키웠습니다.
+ 
+
+### 마이 페이지
+
+![1120234513131755](https://github.com/gn753/camping101_refector/assets/71584114/af3a867f-9626-4659-ab27-fb187c7333da)
+
+
+### 리뷰 페이지 
+
+![1120234345788470](https://github.com/gn753/camping101_refector/assets/71584114/13ef8b60-1361-4b34-94de-30accc138882)
+
 
 ## 핵심 사용 기술 및 개발환경
 
