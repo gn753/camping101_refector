@@ -1,12 +1,18 @@
 ## 소개
 
-<img width="1304" alt="캠핑장-01" src="https://github.com/gn753/camping101_refector/assets/71584114/77d951a4-2603-42a1-8e99-775351f2f091">
-주의: 현재 12월 13일 기준 AWS 비용으로 인해 백엔드 API 배포가 종료 돼 현재는 작동하지않고 있습니다. 
+<img alt="캠핑장-01" src="https://github.com/gn753/camping101_refector/assets/71584114/77d951a4-2603-42a1-8e99-775351f2f091" width="600px" height="400px">   
 
-팀 프로젝트로 백엔드 개발자 2명 프론트엔드 1명으로 구성된 개발한 캠핑예약서비스입니다.
+주의: 현재 12월 13일 기준 AWS 비용으로 인해 백엔드 API 배포가 종료 돼 현재는 작동하지않고 있습니다.   
 
-테스트용 아이디:test1@naver.com
-테스트용 비밀번호:1234
+### 프로젝트 소개
+전국 캠핑장을 리뷰하고 예약할 수 있는 서비스입니다. 
+
+### 프로젝트 구성원 
+- 백엔드 개발자 2명 프론트엔드 1명
+
+### 프로젝트 아키텍쳐
+<img src="https://github.com/gn753/camping101_refector/assets/71584114/606ca0a1-3ca2-4500-8cca-8e1753e97943"/>
+
 
 ### 예약 캘린더 폼 
 ![1120234201567591](https://github.com/gn753/camping101_refector/assets/71584114/7ac8c9d9-15fd-4fce-b2bb-838ebd886d48)
